@@ -1,30 +1,21 @@
-from fastapi import APIRouter, File, UploadFile, Form, HTTPException, BackgroundTasks
+from fastapi import APIRouter, Response, status, File, UploadFile, Form, HTTPException
 from fastapi.responses import JSONResponse
 from typing import Dict, Any
 import json
 
-import uuid
-
-from datetime import datetime
+from backend.app import config
 
 router = APIRouter()
-
-# In-memory storage for job status and results
-jobs_db = {}
-
 
 @router.get("/status/{job_id}")
 def get_job_status(job_id: str):
     """
-    returns the status of the job ["queued", "running", "done", "failed"]
+    returns the status of the job ["queued", "running", "done"]
     """
-    if job_id not in jobs_db:
-        raise HTTPException(status_code=404, detail="Job not found")
 
     return {
-        "job_status": jobs_db[job_id]["status"],
+        "job_status": "queued",
     }
-
 
 @router.get("/results/{job_id}")
 def get_job_results(job_id: str):
@@ -32,54 +23,18 @@ def get_job_results(job_id: str):
     returns the results of the job
     """
 
-    if job_id not in jobs_db:
-        raise HTTPException(status_code=404, detail="Job not found")
-
-    job = jobs_db[job_id]
-
-    if job["status"] != "done":
-        raise HTTPException(
-            status_code=400,
-            detail=f"Job is not completed yet. Current status: {job['status']}"
-        )
-
     return {
-        "job_status": job["status"],
-        "total_price": job.get("total_price", 0),
-        "items": job.get("items", []),
+        "job_status": "done",
+        "total_price": 0,
+        "items" : [],
     }
 
 
 
-def process_job(job_id: str, image_bytes: bytes, params_dict: Dict[str, Any]):
-    """
-    This function runs in the background
-    """
-    try:
-        jobs_db[job_id]["status"] = "running"
-        jobs_db[job_id]["started_at"] = datetime.now().isoformat()
-
-        # Actual shit will go here
-        # Simulate processing
-        import time
-        time.sleep(10)  # Replace with actual processing
-
-        # Update with results
-        jobs_db[job_id]["status"] = "done"
-        jobs_db[job_id]["total_price"] = 123.45
-        jobs_db[job_id]["items"] = ["item1", "item2", "item3"]
-        jobs_db[job_id]["completed_at"] = datetime.now().isoformat()
-
-    except Exception as e:
-        jobs_db[job_id]["status"] = "failed"
-        jobs_db[job_id]["error"] = str(e)
-
-
 @router.post("/generate")
 async def process_image(
-        background_tasks: BackgroundTasks,
-        image: UploadFile = File(...),
-        params: str = Form(...),
+    image: UploadFile = File(...),
+    params: str = Form(...),
 ):
     """
     (multipart/form-data):
@@ -104,21 +59,9 @@ async def process_image(
     image_bytes = await image.read()
 
 
-    job_id = str(uuid.uuid4())
-
-    # Initialize job in database
-    jobs_db[job_id] = {
-        "status": "queued",
-        "created_at": datetime.now().isoformat(),
+    return {
+        "message": "Image and parameters received successfully",
         "filename": image.filename,
         "params": params_dict,
-    }
-
-    # Add the long-running task to background tasks
-    background_tasks.add_task(process_job, job_id, image_bytes, params_dict)
-
-    return {
-        "job_id": job_id,
-        "message": "Job queued successfully",
     }
 
