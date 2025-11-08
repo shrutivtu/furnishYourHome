@@ -1,7 +1,14 @@
-import Home from './pages/Home';  // Adjust path based on where your Home.tsx is located
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme";
+import Home from "./pages/Home";
 
 function App() {
-  return <Home />;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Home />
+    </ThemeProvider>
+  );
 }
 
 export default App;
