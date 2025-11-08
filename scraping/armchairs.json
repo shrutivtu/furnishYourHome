@@ -28,34 +28,6 @@
     }
   },
   {
-    "product_id": "AP-CHR-EKENÄSET-60506898",
-    "product_name": "EKENÄSET Armchair, oak/Gunnared beige",
-    "description": "Inspired by 1950s Scandinavian design. A sturdy, distinct armchair with clean lines and a visible wooden frame.",
-    "website_details": {
-      "website_name": "IKEA",
-      "product_url": "http://ikea.com/de/en/p/ekenaeset-armchair-oak-gunnared-beige-60506898/",
-      "external_sku": "605.068.98"
-    },
-    "category": {
-      "main": "Seating",
-      "sub": "Armchairs",
-      "style": ["Mid-Century Modern", "Scandinavian"]
-    },
-    "physical_attributes": {
-      "color": "Beige"
-    },
-    "suitability_meta": {
-      "room_type": ["Living Room", "Office"],
-      "ambiance": ["Retro", "Stylish"],
-      "max_people_sofa": 1,
-      "feature_tags": ["Mid-Century", "Wooden Frame", "Accent Chair"]
-    },
-    "pricing": {
-      "currency": "EUR",
-      "price": 279.00
-    }
-  },
-  {
     "product_id": "AP-CHR-BROBOCK-90535804",
     "product_name": "BROBOCK Armchair, rattan",
     "description": "A lightweight armchair with a handmade, woven design. Creates a natural, warm feel in any room.",

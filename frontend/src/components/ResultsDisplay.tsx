@@ -21,9 +21,10 @@ interface ResultsDisplayProps {
     furnitureImages: string[];
     totalPrice: number | null;
   }
-  
+
   const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ resultImage, furnitureImages, totalPrice }) => {
-    console.log(resultImage)
+    console.log(resultImage);
+    console.log(furnitureImages);
     return(
     <Fade in timeout={1200}>
       <Box
@@ -103,7 +104,7 @@ interface ResultsDisplayProps {
           </Typography>
         </Paper>
       )}
-  
+
         {/* Furniture Items */}
         {furnitureImages.length > 0 && (
           <Paper
@@ -156,6 +157,16 @@ interface ResultsDisplayProps {
                     },
                   }}
                 >
+                                  <CardMedia
+                  component="a"
+                  href={`http://localhost:9999/?product=${furnitureImg.split('/').pop().replace('.jpg', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: 'block',
+                    textDecoration: 'none',
+                  }}
+                >
                   <CardMedia
                     component="img"
                     image={furnitureImg}
@@ -165,6 +176,7 @@ interface ResultsDisplayProps {
                       objectFit: "cover",
                     }}
                   />
+                </CardMedia>
                 </Card>
               ))}
             </Box>

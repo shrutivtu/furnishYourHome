@@ -1,0 +1,901 @@
+[
+  {
+    "product_id": "AP-CHR-STRAND-20343224",
+    "product_name": "STRANDMON Wing chair, Nordvalla dark grey",
+    "description": "A classic wing chair design, providing comfortable support for the back and neck. A timeless piece perfect for reading or relaxing.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/strandmon-wing-chair-nordvalla-dark-grey-20343224/",
+      "external_sku": "203.432.24"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs & Wing Chairs",
+      "style": ["Classic", "Traditional"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom Nook", "Home Library"],
+      "ambiance": ["Cozy", "Formal"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Wing Chair", "High Back", "Comfort Classic"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 279.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-BROBOCK-90535804",
+    "product_name": "BROBOCK Armchair, rattan",
+    "description": "A lightweight armchair with a handmade, woven design. Creates a natural, warm feel in any room.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/brobock-armchair-rattan-90535804/",
+      "external_sku": "905.358.04"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Bohemian", "Natural"]
+    },
+    "physical_attributes": {
+      "color": "Natural Wood/Brown"
+    },
+    "suitability_meta": {
+      "room_type": ["Sunroom", "Living Room", "Covered Balcony"],
+      "ambiance": ["Relaxed", "Natural"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Rattan", "Woven", "Lightweight"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-ISLEV-JYSK",
+    "product_name": "Dining chair ISLEV w/ armrest natural/oak",
+    "description": "Comfortable dining chair with armrests and a woven seat. Combines functional design with a natural, light appearance.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/dining-room/dining-chairs/dining-chair-islev-w/armrest-natural-oak/natural",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Dining Chairs with Arms",
+      "style": ["Scandinavian", "Functional"]
+    },
+    "physical_attributes": {
+      "color": "Natural/Oak"
+    },
+    "suitability_meta": {
+      "room_type": ["Dining Room", "Kitchen"],
+      "ambiance": ["Practical", "Minimalist"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Dining Chair", "Wooden", "Armrest"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 79.99
+    }
+  },
+  {
+    "product_id": "AP-CHR-VILDSUND-JYSK",
+    "product_name": "Armchair VILDSUND white teddy",
+    "description": "A cozy, rounded armchair with a soft 'teddy' fabric cover, offering modern comfort and a welcoming look.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/living-room/armchairs/armchair-vildsund-white-teddy",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Modern", "Cozy/Hygge"]
+    },
+    "physical_attributes": {
+      "color": "White"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom"],
+      "ambiance": ["Cozy", "Soft Texture"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Teddy Fabric", "Accent Chair", "Modern Shape"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 169.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-SIMESTED-JYSK",
+    "product_name": "Armchair SIMESTED striped black/beige fabric",
+    "description": "A contemporary armchair featuring a distinctive black and beige striped pattern and metal legs. Offers a striking visual accent.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/living-room/armchairs/armchair-simested-striped-black/beige-fabric",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Contemporary", "Bold Pattern"]
+    },
+    "physical_attributes": {
+      "color": "Striped Black/Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Office"],
+      "ambiance": ["Modern", "Patterned Accent"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Striped Pattern", "Metal Legs", "Accent Chair"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-VADEHAVET-JYSK",
+    "product_name": "Armchair VADEHAVET natural fabric/oak",
+    "description": "Classic and simple armchair with a natural fabric seat and solid oak legs. Offers a light, Scandinavian feel.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/living-room/armchairs/armchair-vadehavet-natural-fabric/oak",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Scandinavian", "Natural"]
+    },
+    "physical_attributes": {
+      "color": "Natural Fabric/Oak"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Reading Nook"],
+      "ambiance": ["Hygge", "Light"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Wooden Legs", "Natural Fabric", "Scandinavian"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-COSY-BOLIA",
+    "product_name": "Cosy Chair",
+    "description": "Designed for maximum comfort, this chair features soft, enveloping cushions, living up to its name with a relaxed, modern aesthetic.",
+    "website_details": {
+      "website_name": "Bolia",
+      "product_url": "https://www.bolia.com/en-gb/products/02-330-01_00373/",
+      "external_sku": "02-330-01"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Lounge Chairs",
+      "style": ["Modern", "Lounge"]
+    },
+    "physical_attributes": {
+      "color": "Varies (Example: Light Grey/Off-White)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Lounge Area"],
+      "ambiance": ["Cozy", "Luxury"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Lounge Chair", "Deep Seating", "Comfort"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 1827.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-PEPPY-BOLIA",
+    "product_name": "Peppy Armchair",
+    "description": "A high-quality accent chair with a sculptural, expressive shape, designed to be a statement piece in any contemporary space.",
+    "website_details": {
+      "website_name": "Bolia",
+      "product_url": "https://www.bolia.com/en-gb/products/02-091-02_00096/",
+      "external_sku": "02-091-02"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Statement", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Varies (Example: Dark Green)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Entrance Hall"],
+      "ambiance": ["Modern", "Art Deco"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Sculptural", "Statement Piece", "Designer"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 1505.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-PUFFIN-BOLIA",
+    "product_name": "Puffin Armchair",
+    "description": "An inviting, plump armchair with soft, rounded edges, offering a high degree of seating comfort with a playful, modern silhouette.",
+    "website_details": {
+      "website_name": "Bolia",
+      "product_url": "https://www.bolia.com/en-gb/products/02-083-01_00031/",
+      "external_sku": "02-083-01"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Playful", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Varies (Example: Cream/White)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Lounge Area"],
+      "ambiance": ["Inviting", "Soft"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Rounded Design", "Plump Cushion", "High Comfort"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 1284.00
+    }
+  },
+    {
+    "product_id": "AP-LMP-NEXT-M61948",
+    "product_name": "Ribbed Glass Easy Fit Pendant",
+    "description": "An easy-to-fit pendant shade with a delicate ribbed glass design, providing a soft, ambient light.",
+    "website_details": {
+      "website_name": "Next",
+      "product_url": "https://www.next.de/en/style/st945430/m61948",
+      "external_sku": "M61948"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Pendant Shade",
+      "style": ["Modern", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Clear/Glass"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Dining Room", "Bedroom"],
+      "ambiance": ["Ambient", "Stylish"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Glass", "Easy Fit", "Ceiling Light"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 30.00
+    }
+  },
+  {
+    "product_id": "AP-LMP-NEXT-301626",
+    "product_name": "Chrome Multi-Arm Semi Flush Ceiling Light",
+    "description": "A semi-flush fitting with multiple arms, finished in chrome, offering widespread illumination without hanging too low.",
+    "website_details": {
+      "website_name": "Next",
+      "product_url": "https://www.next.de/en/style/st366399/301626",
+      "external_sku": "301626"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Ceiling Flush Light",
+      "style": ["Contemporary", "Geometric"]
+    },
+    "physical_attributes": {
+      "color": "Chrome/Silver"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Hallway", "Low Ceiling Room"],
+      "ambiance": ["Bright", "Modern"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Multi-Arm", "Semi-Flush", "Chrome"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 102.00
+    }
+  },
+  {
+    "product_id": "AP-LMP-NEXT-125087",
+    "product_name": "Natural Tripod Floor Lamp",
+    "description": "A striking floor lamp with a wooden tripod base and a complementary fabric shade, adding height and warmth.",
+    "website_details": {
+      "website_name": "Next",
+      "product_url": "https://www.next.de/en/style/su061417/125087",
+      "external_sku": "125087"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Floor Lamp",
+      "style": ["Scandinavian", "Industrial"]
+    },
+    "physical_attributes": {
+      "color": "Natural Wood/White Shade"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom", "Office"],
+      "ambiance": ["Warm", "Accent Lighting"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Tripod", "Wooden Base", "Floor Lamp"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 139.00
+    }
+  },
+  {
+    "product_id": "AP-LMP-NEXT-300684",
+    "product_name": "White Ceramic Ribbed Table Lamp",
+    "description": "A stylish table lamp with a ceramic base featuring a ribbed texture and a fabric drum shade.",
+    "website_details": {
+      "website_name": "Next",
+      "product_url": "https://www.next.de/en/style/st298861/300684",
+      "external_sku": "300684"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Table Lamp",
+      "style": ["Minimalist", "Textured"]
+    },
+    "physical_attributes": {
+      "color": "White"
+    },
+    "suitability_meta": {
+      "room_type": ["Side Table", "Bedside Table", "Console"],
+      "ambiance": ["Accent", "Soft Light"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Ceramic Base", "Ribbed", "Table Lamp"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 55.00
+    }
+  },
+  {
+    "product_id": "AP-LMP-IKEA-00508536",
+    "product_name": "SINNERLIG Pendant lamp, bamboo, handmade",
+    "description": "A unique, handwoven bamboo pendant lamp that casts decorative light patterns in the room.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/sinnerlig-pendant-lamp-bamboo-handmade-00508536/",
+      "external_sku": "005.085.36"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Pendant Lamp",
+      "style": ["Bohemian", "Natural"]
+    },
+    "physical_attributes": {
+      "color": "Natural Bamboo"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Dining Room", "Kitchen Island"],
+      "ambiance": ["Warm", "Textured"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Bamboo", "Handmade", "Decorative Shadow"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 59.99
+    }
+  },
+  {
+    "product_id": "AP-LMP-IKEA-90585950",
+    "product_name": "STOCKHOLM 2025 Pendant lamp, glass/brass-plated",
+    "description": "An elegant pendant lamp from the premium Stockholm collection, featuring smoked glass and brass detailing for a refined look.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/stockholm-2025-pendant-lamp-glass-brass-plated-90585950/",
+      "external_sku": "905.859.50"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Pendant Lamp",
+      "style": ["Elegant", "Mid-Century Modern"]
+    },
+    "physical_attributes": {
+      "color": "Smoked Glass/Brass"
+    },
+    "suitability_meta": {
+      "room_type": ["Dining Room", "Formal Living Room"],
+      "ambiance": ["Refined", "Statement"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Brass Plated", "Smoked Glass", "Premium"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 129.00
+    }
+  },
+  {
+    "product_id": "AP-LMP-IKEA-10430778",
+    "product_name": "SOLKLINT Pendant lamp, brass/grey clear glass",
+    "description": "A stylish lamp with a thin brass wireframe and grey tinted glass, designed to distribute a soft light.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/solklint-pendant-lamp-brass-grey-clear-glass-10430778/",
+      "external_sku": "104.307.78"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Pendant Lamp",
+      "style": ["Industrial", "Minimalist"]
+    },
+    "physical_attributes": {
+      "color": "Brass/Grey Tinted Glass"
+    },
+    "suitability_meta": {
+      "room_type": ["Kitchen", "Hallway", "Small Living Room"],
+      "ambiance": ["Focused", "Modern"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Brass", "Tinted Glass", "Small Pendant"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 19.99
+    }
+  },
+  {
+    "product_id": "AP-LMP-IKEA-50492929",
+    "product_name": "HÖGVIND Pendant lamp with 3 lamps, nickel-plated/grey glass",
+    "description": "A cluster of three lamps hanging at different heights, creating a dynamic look and effective lighting over a dining area.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/hoegvind-pendant-lamp-with-3-lamps-nickel-plated-grey-glass-50492929/",
+      "external_sku": "504.929.29"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Multi-Lamp Pendant",
+      "style": ["Contemporary", "Cluster"]
+    },
+    "physical_attributes": {
+      "color": "Nickel/Grey Glass"
+    },
+    "suitability_meta": {
+      "room_type": ["Dining Room", "Stairwell", "High Ceiling Room"],
+      "ambiance": ["Dynamic", "Statement"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Cluster", "Multi-Lamp", "Adjustable Height"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 119.00
+    }
+  },
+  {
+    "product_id": "AP-LMP-BELIANI-664413",
+    "product_name": "Rubberwood Floor Lamp Natural ALIGIDE",
+    "description": "A tall, sturdy floor lamp with a minimalist rubberwood column base and a large drum shade.",
+    "website_details": {
+      "website_name": "Beliani",
+      "product_url": "https://www.beliani.de/rubberwood-floor-lamp-natural-aligide-664413.html",
+      "external_sku": "664413"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Floor Lamp",
+      "style": ["Minimalist", "Scandinavian"]
+    },
+    "physical_attributes": {
+      "color": "Natural Wood/White Shade"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Office", "Bedroom"],
+      "ambiance": ["Soft", "Warm"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Wooden Base", "Drum Shade", "Ambient Light"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 129.99
+    }
+  },
+  {
+    "product_id": "AP-LMP-BELIANI-PERISTERI",
+    "product_name": "Metal Floor Lamp Brown PERISTERI",
+    "description": "An industrial-style floor lamp with a flexible arm and a dark metal finish, suitable for focused task lighting.",
+    "website_details": {
+      "website_name": "Beliani",
+      "product_url": "https://www.beliani.de/metal-floor-lamp-brown-peristeri.html",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Floor Lamp",
+      "style": ["Industrial", "Task Lighting"]
+    },
+    "physical_attributes": {
+      "color": "Brown/Dark Metal"
+    },
+    "suitability_meta": {
+      "room_type": ["Reading Nook", "Office", "Living Room"],
+      "ambiance": ["Focused", "Industrial"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Adjustable Arm", "Metal", "Task Light"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 109.99
+    }
+  },
+  {
+    "product_id": "AP-LMP-BELIANI-KALOMO",
+    "product_name": "Paper Rope Floor Lamp Black KALOMO",
+    "description": "A tall lamp featuring a shade made of woven black paper rope, creating a textural, bohemian feature.",
+    "website_details": {
+      "website_name": "Beliani",
+      "product_url": "https://www.beliani.de/paper-rope-floor-lamp-black-kalomo.html",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Floor Lamp",
+      "style": ["Bohemian", "Textured"]
+    },
+    "physical_attributes": {
+      "color": "Black/Paper Rope"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom"],
+      "ambiance": ["Textured", "Relaxed"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Woven Shade", "Natural Texture", "Boho"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 119.99
+    }
+  },
+  {
+    "product_id": "AP-LMP-BELIANI-STILETTO",
+    "product_name": "Tripod Floor Lamp Grey STILETTO",
+    "description": "A modern floor lamp with a slim, black tripod base and a clean grey fabric shade, offering stability and style.",
+    "website_details": {
+      "website_name": "Beliani",
+      "product_url": "https://www.beliani.de/tripod-floor-lamp-grey-stiletto.html",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Lighting",
+      "sub": "Floor Lamp",
+      "style": ["Contemporary", "Minimalist"]
+    },
+    "physical_attributes": {
+      "color": "Black/Grey Shade"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Office"],
+      "ambiance": ["Modern", "Focused"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Tripod Base", "Fabric Shade", "Contemporary"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 89.99
+    }
+  },
+    {
+    "product_id": "AP-SB-HYLTARP-29489603",
+    "product_name": "HYLTARP 2-seat sofa-bed, Gransel natural",
+    "description": "A comfortable 2-seat sofa that easily converts into a double bed (140x200 cm). Features a durable, washable cover and pocket springs for soft comfort and support. Designed to withstand heavy everyday use.",
+    "website_details": {
+      "website_name": "IKEA (Germany/Europe)",
+      "product_url": "https://www.ikea.com/de/en/p/hyltarp-2-seat-sofa-bed-gransel-natural-s29489603/",
+      "external_sku": "294.896.03"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofa Beds",
+      "style": ["Scandinavian", "Functional", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Natural (Beige/Light Brown)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Guest Room", "Studio Apartment"],
+      "ambiance": ["Cozy", "Practical", "Light/Airy"],
+      "max_people_sofa": 2,
+      "max_people_bed": 2,
+      "feature_tags": ["Sofa-Bed", "Removable/Washable Cover", "Durable"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 838.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-SOEDER-09305426",
+    "product_name": "SOEDERHAMN 4-seat sofa with chaise longue and open end, Gunnared beige",
+    "description": "Deep seats and loose back cushions provide extra comfort. The sofa is highly flexible and can be reconfigured. Lightweight design.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/soederhamn-4-seat-sofa-with-chaise-longue-and-open-end-gunnared-beige-s09305426/",
+      "external_sku": "093.054.26"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sectionals & Modular Sofas",
+      "style": ["Modern", "Modular"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Large Living Room", "Lounge Area"],
+      "ambiance": ["Lounge", "Contemporary"],
+      "max_people_sofa": 4,
+      "feature_tags": ["Modular", "Chaise Longue", "Lightweight"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 949.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-KIVIK-39443054",
+    "product_name": "KIVIK 3-seat sofa with chaise longue, Kelinge grey-turquoise",
+    "description": "Deep seat cushions with a top layer of pocket springs and memory foam. Provides fantastic sitting comfort and support.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/kivik-3-seat-sofa-with-chaise-longue-kelinge-grey-turquoise-s39443054/",
+      "external_sku": "394.430.54"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sectionals & Sofas",
+      "style": ["Casual", "Comfort"]
+    },
+    "physical_attributes": {
+      "color": "Grey-Turquoise"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Family Room"],
+      "ambiance": ["Relaxed", "Vibrant Accent"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Memory Foam", "Deep Seating", "Chaise Longue"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 1099.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-EKTORP-39508998",
+    "product_name": "EKTORP 3-seat sofa, Hakebo dark grey",
+    "description": "A timeless design with comfortably deep seat cushions and a large surface area. The cover is machine washable and easy to change.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/ektorp-3-seat-sofa-hakebo-dark-grey-s39508998/",
+      "external_sku": "395.089.98"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofas",
+      "style": ["Traditional", "Classic"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Cottage"],
+      "ambiance": ["Comfortable", "Homey"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Timeless Design", "Washable Cover", "Comfort Classic"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 499.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-KLIPPAN-79010614",
+    "product_name": "KLIPPAN 2-seat sofa, Vissle grey",
+    "description": "A classic design that is small and easy to furnish with, even when space is limited. The cover is easy to keep clean as it is removable.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/klippan-2-seat-sofa-vissle-grey-s79010614/",
+      "external_sku": "790.106.14"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Compact Sofas",
+      "style": ["Minimalist", "Small Space"]
+    },
+    "physical_attributes": {
+      "color": "Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Small Living Room", "Dorm Room", "Office"],
+      "ambiance": ["Practical", "Compact"],
+      "max_people_sofa": 2,
+      "feature_tags": ["Small Space", "Removable Cover", "Iconic Design"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 299.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-GLOSTAD-50489012",
+    "product_name": "GLOSTAD 2-seat sofa, Knisa dark grey",
+    "description": "A small, affordable sofa with a clean, light look. Ideal for small spaces or as a supplement to existing seating.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/glostad-2-seat-sofa-knisa-dark-grey-50489012/",
+      "external_sku": "504.890.12"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Budget Sofas",
+      "style": ["Minimalist", "Scandinavian"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Small Living Room", "First Apartment"],
+      "ambiance": ["Simple", "Affordable"],
+      "max_people_sofa": 2,
+      "feature_tags": ["Budget Friendly", "Small Space", "Easy Assembly"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-STOCK-90586092",
+    "product_name": "STOCKHOLM 2025 3-seat sofa, Sundhamn beige",
+    "description": "Elegant and comfortable sofa with soft, deep seating. Part of the limited-edition STOCKHOLM 2025 collection, known for high quality and craftmanship.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/stockholm-2025-3-seat-sofa-sundhamn-beige-90586092/",
+      "external_sku": "905.860.92"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Premium Sofas",
+      "style": ["Elegant", "High-End Scandinavian"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Formal Living Room", "Executive Lounge"],
+      "ambiance": ["Elegant", "Comfort Classic"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Premium Quality", "Deep Seating", "Limited Edition"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 1699.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-SOEDER-39305415",
+    "product_name": "SOEDERHAMN 3-seat section, Gunnared beige",
+    "description": "A single modular section from the SOEDERHAMN series. Can be used alone or combined with other pieces for a custom sofa solution.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/soederhamn-3-seat-section-gunnared-beige-s39305415/",
+      "external_sku": "393.054.15"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Modular Sections",
+      "style": ["Modern", "Flexible"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Lounge Area"],
+      "ambiance": ["Lounge", "Contemporary"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Modular", "Customizable", "Lightweight"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 649.00
+    }
+  },
+  {
+    "product_id": "AP-SB-VEJLBY-JYSK",
+    "product_name": "Sofa-bed with chaise longue VEJLBY fabric dark grey",
+    "description": "A practical sofa bed with a chaise longue that includes hidden storage. Easily converts into a comfortable double bed.",
+    "website_details": {
+      "website_name": "JYSK (Germany)",
+      "product_url": "https://jysk.de/wohnzimmer/schlafsofas/schlafsofa-chaiselongue-vejlby-stoff-dunkelgrau",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofa Beds with Chaise",
+      "style": ["Functional", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Guest Room"],
+      "ambiance": ["Practical", "Space Saving"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Sofa-Bed", "Storage", "Chaise Longue"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 549.00
+    }
+  },
+  {
+    "product_id": "AP-SB-SKILLEBEKK-ARM",
+    "product_name": "Sleeper armchair SKILLEBEKK fabric dark grey",
+    "description": "A compact armchair that can be quickly folded out into a comfortable single bed. Ideal for small spaces or occasional guests.",
+    "website_details": {
+      "website_name": "JYSK (Germany)",
+      "product_url": "https://jysk.de/wohnzimmer/schlafsofas/schlafsessel-skillebekk-stoff-dunkelgrau",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sleeper Armchairs",
+      "style": ["Compact", "Functional"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Small Bedroom", "Home Office", "Small Living Room"],
+      "ambiance": ["Space Saving", "Practical"],
+      "max_people_sofa": 1,
+      "max_people_bed": 1,
+      "feature_tags": ["Sleeper Chair", "Compact", "Single Bed"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 199.00
+    }
+  },
+  {
+    "product_id": "AP-SB-SKILLEBEKK-SOFA",
+    "product_name": "Sofa-bed SKILLEBEKK dark grey fabric",
+    "description": "A versatile 3-seater sofa that converts into a standard double bed, featuring click-clack mechanism and a modern look.",
+    "website_details": {
+      "website_name": "JYSK (Germany)",
+      "product_url": "https://jysk.de/wohnzimmer/schlafsofas/schlafsofa-skillebekk-dunkelgrau-stoff",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofa Beds",
+      "style": ["Modern", "Simple"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Guest Room"],
+      "ambiance": ["Practical", "Contemporary"],
+      "max_people_sofa": 3,
+      "max_people_bed": 2,
+      "feature_tags": ["Sofa-Bed", "Click-Clack", "3-Seater"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 379.00
+    }
+  }
+]

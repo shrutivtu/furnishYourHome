@@ -37,7 +37,7 @@ const Header: React.FC = () => (
               textShadow: "0 4px 12px rgba(0,0,0,0.15)",
             }}
           >
-            AI Room Redesigner
+            Dreamify Home
           </Typography>
         </Box>
         <Typography
@@ -48,7 +48,10 @@ const Header: React.FC = () => (
             textShadow: "0 2px 4px rgba(0,0,0,0.1)",
           }}
         >
-          Transform your space with AI-powered design magic ✨
+          Transform your interiors, with the power of AI. ✨
+        </Typography>
+          <Typography>
+            And yes, these are real products. You can buy today!
         </Typography>
         <Box sx={{ mt: 3, display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
           <Chip

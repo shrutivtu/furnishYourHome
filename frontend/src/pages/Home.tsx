@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   const [totalPrice, setTotalPrice] = useState<number | null>(null);
 
   const BASE_URL = "http://localhost:8000";
-  const RESULTS_PATH = "/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/results/";
+  const RESULTS_PATH = "";
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -92,18 +92,19 @@ const Home: React.FC = () => {
       if (!resultResponse.ok) throw new Error("Failed to fetch results");
   
       const resultData = await resultResponse.json();
+      console.log(resultData);
       const jobIdStr = String(jobId);
   
       // Redesigned room image
       console.log(jobIdStr);
-      const redesignedImagePath = `${RESULTS_PATH}/${jobIdStr}.png`;
+      const redesignedImagePath = `/${jobIdStr}.png`;
       console.log(redesignedImagePath)
       setResultImage(redesignedImagePath);
   
       // Furniture images
-      if (resultData.furniture_ids && Array.isArray(resultData.furniture_ids)) {
-        const furniturePaths = resultData.furniture_ids.map(
-          (furnitureId: string) => `${RESULTS_PATH}/${jobIdStr}_furniture_${furnitureId}.jpg`
+      if (resultData.items && Array.isArray(resultData.items)) {
+        const furniturePaths = resultData.items.map(
+          (furnitureId: string) => `${RESULTS_PATH}/data/${furnitureId}.jpg`
         );
         setFurnitureImages(furniturePaths);
       }

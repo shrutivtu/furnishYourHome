@@ -22,7 +22,7 @@ class InteriorDesignGenerator:
     def load_inventory(self):
         inventory = {}
         
-        files = ['/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/scraping/armchairs.json', '/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/scraping/lamps.json', '/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/scraping/sofas.json']
+        files = ['/Users/lharchi/Projects/furnishYourHome/scraping/armchairs.json', '/Users/lharchi/Projects/furnishYourHome/scraping/lamps.json', '/Users/lharchi/Projects/furnishYourHome/scraping/sofas.json']
         for file in files:
             try:
                 with open(file, 'r', encoding='utf-8') as f:
@@ -96,7 +96,7 @@ Please select appropriate items that match the style and budget."""
             running_items = [item['product_id'] for item in selected_items]
 
             # Extract image paths based on product IDs
-            running_images = [f"/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/data/{item['product_id']}.jpg" for item in selected_items]
+            running_images = [f"/Users/lharchi/Projects/furnishYourHome/data/{item['product_id']}.jpg" for item in selected_items]
 
             # Return in your specified format
             return [
