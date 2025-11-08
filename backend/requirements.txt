@@ -4,6 +4,3 @@ gunicorn~=23.0.0
 python-multipart~=0.0.20
 openai
 python-dotenv~=1.2.1
-requests
-google-genai
-Pillow
