@@ -3,6 +3,7 @@ from fastapi.responses import Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app import jobs
+from backend.app import health
 
 app = FastAPI()
 
@@ -15,6 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(health.router, prefix="/health", tags=["health"])
 app.include_router(jobs.router, prefix="/jobs", tags=["jobs"])
 
 @app.get("/")
