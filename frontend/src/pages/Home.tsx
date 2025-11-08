@@ -1,553 +1,172 @@
-import { useState } from 'react';
+import React, { useState } from "react";
 import {
-  Container,
-  Typography,
   Box,
-  Card,
-  CardContent,
+  Typography,
   Button,
+  TextField,
   CircularProgress,
   Alert,
-  Paper,
-  TextField,
-  Fade,
-  Chip,
-} from '@mui/material';
-import {
-  CloudUpload,
-  AutoAwesome,
-  ShoppingCart,
-  OpenInNew,
-  Refresh
-} from '@mui/icons-material';
-
-interface FurnitureItem {
-  id: string;
-  name: string;
-  price?: number;
-  imageUrl: string;
-  provider: string;
-}
-
-interface RedesignResponse {
-  redesignedImageUrl: string;
-  furnitureItems: FurnitureItem[];
-  shopUrl?: string;
-}
+} from "@mui/material";
 
 const Home: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
-  const [prompt, setPrompt] = useState('');
-  const [budget, setBudget] = useState(''); // ✅ Added budget field
-  const [redesignData, setRedesignData] = useState<RedesignResponse | null>(null);
+  const [prompt, setPrompt] = useState("");
+  const [budget, setBudget] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [refinementPrompt, setRefinementPrompt] = useState('');
-  const [refining, setRefining] = useState(false);
+  const [resultImage, setResultImage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setImage(file);
-    setError('');
+  const BASE_URL = "http://localhost:8000"; // Change if backend hosted elsewhere
 
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => setPreview(reader.result as string);
-      reader.readAsDataURL(file);
-    } else {
-      setPreview(null);
+      setImage(file);
+      setPreview(URL.createObjectURL(file));
     }
   };
 
   const handleSubmit = async () => {
-    if (!image) {
-      setError('Please upload a room image');
-      return;
-    }
-
-    if (!prompt.trim()) {
-      setError('Please enter a prompt describing how you want to redesign the room');
-      return;
-    }
-
-    if (!budget.trim()) {
-      setError('Please enter your maximum budget');
+    if (!image || !prompt.trim() || !budget.trim()) {
+      setError("Please upload an image, enter your vision, and provide a budget.");
       return;
     }
 
     setLoading(true);
-    setError('');
+    setError(null);
+    setResultImage(null);
 
     try {
-      // MOCK DATA - Remove this when you have real backend
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      console.log('User Budget:', budget); // ✅ For testing
-
-      const mockData: RedesignResponse = {
-        redesignedImageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200',
-        shopUrl: 'https://your-furniture-shop.com/collection/modern-living',
-        furnitureItems: [
-          {
-            id: '1',
-            name: 'Modern Gray Sofa',
-            price: 899,
-            imageUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400',
-            provider: 'IKEA'
-          },
-          {
-            id: '2',
-            name: 'Oak Coffee Table',
-            price: 299,
-            imageUrl: 'https://images.unsplash.com/photo-1617098900591-6f29f7d72a36?w=400',
-            provider: 'West Elm'
-          },
-          {
-            id: '3',
-            name: 'Floor Lamp',
-            price: 149,
-            imageUrl: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400',
-            provider: 'CB2'
-          },
-          {
-            id: '4',
-            name: 'Wall Art',
-            price: 79,
-            imageUrl: 'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=400',
-            provider: 'Article'
-          },
-          {
-            id: '5',
-            name: 'Area Rug',
-            price: 349,
-            imageUrl: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=400',
-            provider: 'Wayfair'
-          },
-          {
-            id: '6',
-            name: 'Throw Pillows',
-            price: 45,
-            imageUrl: 'https://images.unsplash.com/photo-1584208632869-05fa2b2a5934?w=400',
-            provider: 'Target'
-          }
-        ]
+      // Step 1: Prepare form data
+      const paramsData = {
+        prompt,
+        max_price: parseFloat(budget),
       };
 
-      setRedesignData(mockData);
-      // END MOCK DATA
-
-      // Real API call example:
-      /*
       const formData = new FormData();
-      formData.append('image', image);
-      formData.append('prompt', prompt);
-      formData.append('budget', budget);
+      formData.append("params", JSON.stringify(paramsData));
+      formData.append("image", image);
 
-      const response = await fetch('/api/redesign', {
-        method: 'POST',
+      // Step 2: Submit the job
+      const jobResponse = await fetch(`${BASE_URL}/jobs/generate`, {
+        method: "POST",
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to redesign room');
+      if (!jobResponse.ok) throw new Error("Failed to submit job");
+      const jobData = await jobResponse.json();
+      const jobId = jobData.job_id;
+
+      // Step 3: Poll for job status
+      let jobStatus = "pending";
+      for (let attempt = 0; attempt < 20; attempt++) {
+        const statusResponse = await fetch(`${BASE_URL}/jobs/status/${jobId}`);
+        if (!statusResponse.ok) throw new Error("Failed to check job status");
+
+        const statusData = await statusResponse.json();
+        jobStatus = statusData.job_status;
+
+        if (jobStatus === "done") break;
+        if (jobStatus === "failed") throw new Error("Job failed on server");
+
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait 2s
       }
 
-      const data: RedesignResponse = await response.json();
-      setRedesignData(data);
-      */
+      if (jobStatus !== "done") throw new Error("Job did not complete in time");
 
+      // Step 4: Fetch the results
+      const resultResponse = await fetch(`${BASE_URL}/jobs/results/${jobId}`);
+      if (!resultResponse.ok) throw new Error("Failed to fetch results");
+
+      const resultData = await resultResponse.json();
+
+      // Assuming backend returns `redesignedImageUrl`
+      setResultImage(resultData.redesignedImageUrl);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to generate redesign. Please try again.');
-      console.error('Error:', err);
+      setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleRefinement = async () => {
-    if (!refinementPrompt.trim()) {
-      setError('Please enter a refinement prompt');
-      return;
-    }
-
-    setRefining(true);
-    setError('');
-
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      const updatedData: RedesignResponse = {
-        ...redesignData!,
-        redesignedImageUrl: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200',
-      };
-
-      setRedesignData(updatedData);
-      setRefinementPrompt('');
-
-    } catch (err) {
-      setError('Failed to refine design. Please try again.');
-    } finally {
-      setRefining(false);
-    }
-  };
-
-  const handleReset = () => {
-    setImage(null);
-    setPreview(null);
-    setPrompt('');
-    setBudget(''); // ✅ reset budget
-    setRedesignData(null);
-    setError('');
-    setRefinementPrompt('');
-  };
-
-  const handleShopClick = () => {
-    const shopUrl = redesignData?.shopUrl || 'https://your-furniture-shop.com';
-    window.open(shopUrl, '_blank');
-  };
-
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#f5f7fa', py: 4 }}>
-      <Container maxWidth={redesignData ? 'lg' : 'sm'} sx={{ transition: 'max-width 0.5s ease' }}>
-        {/* Header */}
-        <Box textAlign="center" mb={4}>
-          <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ color: '#1a237e' }}>
-            AI Room Redesigner
+    <Box sx={{ p: 4, textAlign: "center" }}>
+      <Typography variant="h3" fontWeight="bold" gutterBottom>
+        AI Room Redesigner
+      </Typography>
+      <Typography variant="subtitle1" color="text.secondary" gutterBottom>
+        Upload your room photo, describe your vision, and set your budget.
+      </Typography>
+
+      {/* Image Upload */}
+      <Box mt={4} mb={3}>
+        <Button variant="outlined" component="label">
+          {preview ? "Change Image" : "Upload Room Image"}
+          <input type="file" accept="image/*" hidden onChange={handleImageUpload} />
+        </Button>
+        {preview && (
+          <Box mt={2}>
+            <img
+              src={preview}
+              alt="Preview"
+              style={{ maxWidth: "100%", borderRadius: 8 }}
+            />
+          </Box>
+        )}
+      </Box>
+
+      {/* Prompt Input */}
+      <Box mb={3}>
+        <TextField
+          label="Describe your vision"
+          fullWidth
+          multiline
+          rows={3}
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
+      </Box>
+
+      {/* Budget Input */}
+      <Box mb={3}>
+        <TextField
+          label="Maximum Budget ($)"
+          type="number"
+          fullWidth
+          value={budget}
+          onChange={(e) => setBudget(e.target.value)}
+        />
+      </Box>
+
+      {error && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      )}
+
+      <Button
+        variant="contained"
+        size="large"
+        onClick={handleSubmit}
+        disabled={loading}
+      >
+        {loading ? <CircularProgress size={24} color="inherit" /> : "Redesign Room"}
+      </Button>
+
+      {/* Result */}
+      {resultImage && (
+        <Box mt={4}>
+          <Typography variant="h5" gutterBottom>
+            Your Redesigned Room
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            {redesignData ? 'Your Redesigned Space' : 'Upload your room and describe your vision'}
-          </Typography>
+          <img
+            src={resultImage}
+            alt="Redesigned Room"
+            style={{ width: "100%", borderRadius: 8 }}
+          />
         </Box>
-
-        {/* Centered Input (Before Submission) */}
-        {!redesignData && (
-          <Fade in={!redesignData}>
-            <Card sx={{ boxShadow: 3, borderRadius: 3 }}>
-              <CardContent sx={{ p: 4 }}>
-                {/* Image Upload */}
-                <Box mb={3}>
-                  <Typography variant="h6" mb={2} fontWeight="600">
-                    Upload Room Photo
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    component="label"
-                    fullWidth
-                    startIcon={<CloudUpload />}
-                    sx={{
-                      py: 3,
-                      borderStyle: 'dashed',
-                      borderWidth: 2,
-                      '&:hover': { borderStyle: 'dashed' }
-                    }}
-                  >
-                    {preview ? 'Change Image' : 'Upload Room Image'}
-                    <input
-                      type="file"
-                      accept="image/*"
-                      hidden
-                      onChange={handleImageChange}
-                    />
-                  </Button>
-
-                  {preview && (
-                    <Paper elevation={2} sx={{ mt: 3, p: 2, bgcolor: '#fafafa' }}>
-                      <img
-                        src={preview}
-                        alt="Room preview"
-                        style={{
-                          width: '100%',
-                          maxHeight: 300,
-                          borderRadius: 8,
-                          objectFit: 'cover'
-                        }}
-                      />
-                    </Paper>
-                  )}
-                </Box>
-
-                {/* Prompt Textarea */}
-                <Box mb={3}>
-                  <Typography variant="h6" mb={2} fontWeight="600">
-                    Describe Your Vision
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    multiline
-                    rows={4}
-                    placeholder="E.g., Modern minimalist living room with warm tones, cozy seating area, and natural lighting"
-                    value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
-                    variant="outlined"
-                    sx={{
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: '#fafafa'
-                      }
-                    }}
-                  />
-                </Box>
-
-                {/* ✅ Budget Input */}
-                <Box mb={3}>
-                  <Typography variant="h6" mb={2} fontWeight="600">
-                    Your Maximum Budget (USD)
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    type="number"
-                    placeholder="E.g., 1500"
-                    value={budget}
-                    onChange={(e) => setBudget(e.target.value)}
-                    variant="outlined"
-                    InputProps={{ inputProps: { min: 0 } }}
-                    sx={{
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: '#fafafa'
-                      }
-                    }}
-                  />
-                </Box>
-
-                {/* Error Message */}
-                {error && (
-                  <Alert severity="error" sx={{ mb: 2 }}>
-                    {error}
-                  </Alert>
-                )}
-
-                {/* Submit Button */}
-                <Button
-                  variant="contained"
-                  size="large"
-                  fullWidth
-                  onClick={handleSubmit}
-                  disabled={loading || !image || !prompt.trim() || !budget.trim()} // ✅ include budget validation
-                  startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <AutoAwesome />}
-                  sx={{ py: 1.5, fontSize: '1.1rem' }}
-                >
-                  {loading ? 'Redesigning Your Room...' : 'Redesign Room'}
-                </Button>
-              </CardContent>
-            </Card>
-          </Fade>
-        )}
-
-        {/* Results View (After Submission) */}
-        {redesignData && (
-          <Fade in={!!redesignData}>
-            <Box>
-              {/* Redesigned Room Image */}
-              <Card sx={{ boxShadow: 4, borderRadius: 3, mb: 4, overflow: 'hidden' }}>
-                <Box sx={{ position: 'relative' }}>
-                  <img
-                    src={redesignData.redesignedImageUrl}
-                    alt="Redesigned room"
-                    style={{
-                      width: '100%',
-                      height: '500px',
-                      objectFit: 'cover'
-                    }}
-                  />
-                  {/* AI Badge Overlay */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: 20,
-                      right: 20,
-                      bgcolor: 'rgba(25, 118, 210, 0.95)',
-                      color: 'white',
-                      px: 2.5,
-                      py: 1,
-                      borderRadius: 2,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 1,
-                      boxShadow: 3
-                    }}
-                  >
-                    <AutoAwesome sx={{ fontSize: 20 }} />
-                    <Typography variant="body2" fontWeight="600">
-                      AI Redesigned
-                    </Typography>
-                  </Box>
-                </Box>
-              </Card>
-
-              {/* Furniture Items Grid */}
-              <Box mb={4}>
-                <Typography variant="h5" fontWeight="600" mb={3} sx={{ color: '#1a237e' }}>
-                  Featured Furniture & Decor
-                </Typography>
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gridTemplateColumns: {
-                      xs: 'repeat(2, 1fr)',
-                      sm: 'repeat(3, 1fr)',
-                      md: 'repeat(6, 1fr)'
-                    },
-                    gap: 3
-                  }}
-                >
-                  {redesignData.furnitureItems.map((item) => (
-                    <Card
-                      key={item.id}
-                      sx={{
-                        boxShadow: 2,
-                        borderRadius: 2,
-                        transition: 'transform 0.2s, box-shadow 0.2s',
-                        '&:hover': {
-                          transform: 'translateY(-4px)',
-                          boxShadow: 4
-                        }
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: '100%',
-                          height: 140,
-                          overflow: 'hidden',
-                          bgcolor: '#f5f5f5'
-                        }}
-                      >
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover'
-                          }}
-                        />
-                      </Box>
-                      <CardContent sx={{ p: 1.5 }}>
-                        <Typography
-                          variant="body2"
-                          fontWeight="600"
-                          sx={{
-                            mb: 0.5,
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            whiteSpace: 'nowrap'
-                          }}
-                        >
-                          {item.name}
-                        </Typography>
-                        <Chip
-                          label={item.provider}
-                          size="small"
-                          sx={{
-                            height: 20,
-                            fontSize: '0.7rem',
-                            mb: 0.5,
-                            bgcolor: '#e3f2fd',
-                            color: '#1976d2'
-                          }}
-                        />
-                        {item.price && (
-                          <Typography variant="body2" fontWeight="700" color="primary">
-                            ${item.price}
-                          </Typography>
-                        )}
-                      </CardContent>
-                    </Card>
-                  ))}
-                </Box>
-              </Box>
-
-              {/* Shop That Look Button */}
-              <Box mb={4} textAlign="center">
-                <Button
-                  variant="contained"
-                  size="large"
-                  onClick={handleShopClick}
-                  startIcon={<ShoppingCart />}
-                  endIcon={<OpenInNew />}
-                  sx={{
-                    py: 2,
-                    px: 6,
-                    fontSize: '1.1rem',
-                    fontWeight: 600,
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    boxShadow: 3,
-                    '&:hover': {
-                      background: 'linear-gradient(135deg, #5568d3 0%, #653a8b 100%)',
-                      transform: 'translateY(-2px)',
-                      boxShadow: 6
-                    },
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  Shop This Look
-                </Button>
-              </Box>
-
-              {/* Refinement Section */}
-              <Card sx={{ boxShadow: 3, borderRadius: 3, mb: 3 }}>
-                <CardContent sx={{ p: 4 }}>
-                  <Box display="flex" alignItems="center" mb={2}>
-                    <Refresh sx={{ mr: 1.5, color: '#1976d2' }} />
-                    <Typography variant="h6" fontWeight="600">
-                      Want to refine this design?
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2" color="text.secondary" mb={3}>
-                    Describe any changes you'd like to make to the current design
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    multiline
-                    rows={3}
-                    placeholder="E.g., Make it more colorful, add more plants, change the sofa color to blue"
-                    value={refinementPrompt}
-                    onChange={(e) => setRefinementPrompt(e.target.value)}
-                    variant="outlined"
-                    sx={{
-                      mb: 2,
-                      '& .MuiOutlinedInput-root': {
-                        bgcolor: '#fafafa'
-                      }
-                    }}
-                  />
-                  <Box display="flex" gap={2}>
-                    <Button
-                      variant="contained"
-                      onClick={handleRefinement}
-                      disabled={refining || !refinementPrompt.trim()}
-                      startIcon={refining ? <CircularProgress size={20} color="inherit" /> : <AutoAwesome />}
-                      sx={{ flex: 1 }}
-                    >
-                      {refining ? 'Refining Design...' : 'Refine Design'}
-                    </Button>
-                    <Button
-                      variant="outlined"
-                      onClick={handleReset}
-                      sx={{ flex: 1 }}
-                    >
-                      Start New Design
-                    </Button>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Box>
-          </Fade>
-        )}
-
-        {/* Info Section (Only show before submission) */}
-        {!redesignData && !loading && (
-          <Fade in={!redesignData}>
-            <Box mt={6} textAlign="center">
-              <Paper sx={{ maxWidth: 500, mx: 'auto', p: 3, bgcolor: '#e3f2fd' }}>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>How it works:</strong> Upload a photo of your room, describe your vision,
-                  and specify your budget. Our AI will redesign it using items from our inventory.
-                </Typography>
-              </Paper>
-            </Box>
-          </Fade>
-        )}
-      </Container>
+      )}
     </Box>
   );
 };
