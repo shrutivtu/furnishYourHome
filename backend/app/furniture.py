@@ -1,7 +1,7 @@
 import json
 import os
 from openai import OpenAI
-import config
+from backend.app import config
 
 class InteriorDesignGenerator:
 
@@ -9,7 +9,7 @@ class InteriorDesignGenerator:
     def load_inventory():
         """Load all product JSON files"""
         inventory = {}
-        files = ['../../scraping/sofas.json']
+        files = ['../../scraping/sofas.json', '../../scraping/lamps.json', '../../scraping/armchairs.json']
         for file in files:
             try:
                 with open(file, 'r', encoding='utf-8') as f:
@@ -102,12 +102,12 @@ Please select appropriate items that match the style and budget."""
             return [user_prompt, [], [], 0]
 
 
-result = InteriorDesignGenerator.generate_system_prompt(
-    user_prompt="Make scandinavian design living room with natural colors",
-    user_price=1200.0
-)
+#result = InteriorDesignGenerator.generate_system_prompt(
+#    user_prompt="Make scandinavian design living room with natural colors",
+#    user_price=1200.0
+#)
 
-print(f"Prompt: {result[0]}")
-print(f"Images: {result[1]}")
-print(f"Items: {result[2]}")
-print(f"Total Price: {result[3]}")
+#print(f"Prompt: {result[0]}")
+#print(f"Images: {result[1]}")
+#print(f"Items: {result[2]}")
+#print(f"Total Price: {result[3]}")

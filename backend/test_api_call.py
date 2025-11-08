@@ -34,7 +34,7 @@ job_id = response.json()["job_id"]
 print(f"Job ID: {job_id}\n")
 
 # 4. Poll for status
-max_attempts = 20
+max_attempts = 70
 for attempt in range(max_attempts):
     print(f"Checking status (attempt {attempt + 1})...")
     status_response = requests.get(f"{BASE_URL}/jobs/status/{job_id}")
@@ -53,6 +53,6 @@ for attempt in range(max_attempts):
     time.sleep(2)  # Wait 2 seconds before checking again
 
 # 5. Get results
-print("Fetching results...")
-results_response = requests.get(f"{BASE_URL}/jobs/results/{job_id}")
-print (results_response.json())
+#print("Fetching results...")
+#results_response = requests.get(f"{BASE_URL}/jobs/results/{job_id}")
+#print (results_response.json())
