@@ -8,11 +8,10 @@ import {
   Button,
   CircularProgress,
   Alert,
-  Grid,
   Paper,
   TextField,
   Fade,
-  Chip
+  Chip,
 } from '@mui/material';
 import {
   CloudUpload,
@@ -50,7 +49,7 @@ const Home: React.FC = () => {
     const file = e.target.files?.[0] || null;
     setImage(file);
     setError('');
-    
+
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => setPreview(reader.result as string);
@@ -77,7 +76,7 @@ const Home: React.FC = () => {
     try {
       // MOCK DATA - Remove this when you have real backend
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
+
       const mockData: RedesignResponse = {
         redesignedImageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200',
         shopUrl: 'https://your-furniture-shop.com/collection/modern-living',
@@ -126,7 +125,7 @@ const Home: React.FC = () => {
           }
         ]
       };
-      
+
       setRedesignData(mockData);
       // END MOCK DATA
 
@@ -148,7 +147,7 @@ const Home: React.FC = () => {
       const data: RedesignResponse = await response.json();
       setRedesignData(data);
       */
-      
+
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to generate redesign. Please try again.');
       console.error('Error:', err);
@@ -169,16 +168,16 @@ const Home: React.FC = () => {
     try {
       // MOCK - In real app, send refinement request to backend
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
+
       // Simulate updated design
       const updatedData: RedesignResponse = {
         ...redesignData!,
         redesignedImageUrl: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200', // Different room
       };
-      
+
       setRedesignData(updatedData);
       setRefinementPrompt('');
-      
+
       /*
       // Real API call
       const formData = new FormData();
@@ -194,7 +193,7 @@ const Home: React.FC = () => {
       const data = await response.json();
       setRedesignData(data);
       */
-      
+
     } catch (err) {
       setError('Failed to refine design. Please try again.');
     } finally {
@@ -363,76 +362,86 @@ const Home: React.FC = () => {
               </Card>
 
               {/* Furniture Items Grid */}
+              {/* Furniture Items Grid */}
               <Box mb={4}>
                 <Typography variant="h5" fontWeight="600" mb={3} sx={{ color: '#1a237e' }}>
                   Featured Furniture & Decor
                 </Typography>
-                <Grid container spacing={3}>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: {
+                      xs: 'repeat(2, 1fr)',  // 2 columns on mobile
+                      sm: 'repeat(3, 1fr)',  // 3 columns on tablet
+                      md: 'repeat(6, 1fr)'   // 6 columns on desktop
+                    },
+                    gap: 3
+                  }}
+                >
                   {redesignData.furnitureItems.map((item) => (
-                    <Grid item xs={6} sm={4} md={2} key={item.id}>
-                      <Card 
-                        sx={{ 
-                          boxShadow: 2, 
-                          borderRadius: 2,
-                          transition: 'transform 0.2s, box-shadow 0.2s',
-                          '&:hover': {
-                            transform: 'translateY(-4px)',
-                            boxShadow: 4
-                          }
+                    <Card
+                      key={item.id}
+                      sx={{
+                        boxShadow: 2,
+                        borderRadius: 2,
+                        transition: 'transform 0.2s, box-shadow 0.2s',
+                        '&:hover': {
+                          transform: 'translateY(-4px)',
+                          boxShadow: 4
+                        }
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: '100%',
+                          height: 140,
+                          overflow: 'hidden',
+                          bgcolor: '#f5f5f5'
                         }}
                       >
-                        <Box
-                          sx={{
+                        <img
+                          src={item.imageUrl}
+                          alt={item.name}
+                          style={{
                             width: '100%',
-                            height: 140,
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
+                      </Box>
+                      <CardContent sx={{ p: 1.5 }}>
+                        <Typography
+                          variant="body2"
+                          fontWeight="600"
+                          sx={{
+                            mb: 0.5,
                             overflow: 'hidden',
-                            bgcolor: '#f5f5f5'
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap'
                           }}
                         >
-                          <img
-                            src={item.imageUrl}
-                            alt={item.name}
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover'
-                            }}
-                          />
-                        </Box>
-                        <CardContent sx={{ p: 1.5 }}>
-                          <Typography 
-                            variant="body2" 
-                            fontWeight="600" 
-                            sx={{ 
-                              mb: 0.5,
-                              overflow: 'hidden',
-                              textOverflow: 'ellipsis',
-                              whiteSpace: 'nowrap'
-                            }}
-                          >
-                            {item.name}
+                          {item.name}
+                        </Typography>
+                        <Chip
+                          label={item.provider}
+                          size="small"
+                          sx={{
+                            height: 20,
+                            fontSize: '0.7rem',
+                            mb: 0.5,
+                            bgcolor: '#e3f2fd',
+                            color: '#1976d2'
+                          }}
+                        />
+                        {item.price && (
+                          <Typography variant="body2" fontWeight="700" color="primary">
+                            ${item.price}
                           </Typography>
-                          <Chip 
-                            label={item.provider} 
-                            size="small" 
-                            sx={{ 
-                              height: 20,
-                              fontSize: '0.7rem',
-                              mb: 0.5,
-                              bgcolor: '#e3f2fd',
-                              color: '#1976d2'
-                            }} 
-                          />
-                          {item.price && (
-                            <Typography variant="body2" fontWeight="700" color="primary">
-                              ${item.price}
-                            </Typography>
-                          )}
-                        </CardContent>
-                      </Card>
-                    </Grid>
+                        )}
+                      </CardContent>
+                    </Card>
                   ))}
-                </Grid>
+                </Box>
               </Box>
 
               {/* Shop That Look Button */}
@@ -519,7 +528,7 @@ const Home: React.FC = () => {
             <Box mt={6} textAlign="center">
               <Paper sx={{ maxWidth: 500, mx: 'auto', p: 3, bgcolor: '#e3f2fd' }}>
                 <Typography variant="body2" color="text.secondary">
-                  <strong>How it works:</strong> Upload a photo of your room and describe your vision. 
+                  <strong>How it works:</strong> Upload a photo of your room and describe your vision.
                   Our AI will redesign it using items from our inventory.
                 </Typography>
               </Paper>
