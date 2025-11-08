@@ -166,7 +166,7 @@ const Home: React.FC = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        background: "linear-gradient(135deg, #f5e6d3 0%, #d4a574 50%, #8b6f47 100%)",
         py: 6,
         position: "relative",
         overflow: "hidden",
@@ -177,7 +177,7 @@ const Home: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+          background: "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)",
           pointerEvents: "none",
         },
       }}
@@ -199,7 +199,7 @@ const Home: React.FC = () => {
                 variant="h2"
                 fontWeight="800"
                 sx={{
-                  background: "linear-gradient(to right, #ffffff, #f0f0ff)",
+                  background: "linear-gradient(to right, #ffffff, #fff8f0)",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -284,7 +284,7 @@ const Home: React.FC = () => {
                       fontWeight="700"
                       mb={1.5}
                       sx={{
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                         backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -300,15 +300,15 @@ const Home: React.FC = () => {
                         height: preview ? "auto" : 220,
                         borderStyle: "dashed",
                         borderWidth: 2,
-                        borderColor: "#667eea",
+                        borderColor: "#d4a574",
                         borderRadius: 3,
-                        background: "linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%)",
+                        background: "linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(139, 111, 71, 0.05) 100%)",
                         transition: "all 0.3s ease",
                         "&:hover": {
-                          borderColor: "#764ba2",
-                          background: "linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%)",
+                          borderColor: "#8b6f47",
+                          background: "linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(139, 111, 71, 0.1) 100%)",
                           transform: "translateY(-2px)",
-                          boxShadow: "0 8px 20px rgba(102, 126, 234, 0.15)",
+                          boxShadow: "0 8px 20px rgba(139, 111, 71, 0.15)",
                         },
                       }}
                     >
@@ -327,8 +327,8 @@ const Home: React.FC = () => {
                         </Box>
                       ) : (
                         <Box textAlign="center">
-                          <Upload sx={{ fontSize: 48, color: "#667eea", mb: 2 }} />
-                          <Typography variant="body1" color="#667eea" fontWeight="600">
+                          <Upload sx={{ fontSize: 48, color: "#d4a574", mb: 2 }} />
+                          <Typography variant="body1" color="#8b6f47" fontWeight="600">
                             Click to upload or drag and drop
                           </Typography>
                           <Typography variant="caption" color="text.secondary" mt={1} display="block">
@@ -354,7 +354,7 @@ const Home: React.FC = () => {
                       fontWeight="700"
                       mb={1.5}
                       sx={{
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                         backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -372,15 +372,15 @@ const Home: React.FC = () => {
                       variant="outlined"
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          background: "linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%)",
+                          background: "linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(139, 111, 71, 0.05) 100%)",
                           borderRadius: 2,
                           transition: "all 0.3s ease",
                           "&:hover": {
-                            background: "linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%)",
+                            background: "linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(139, 111, 71, 0.08) 100%)",
                           },
                           "&.Mui-focused": {
                             background: "white",
-                            boxShadow: "0 0 0 3px rgba(102, 126, 234, 0.1)",
+                            boxShadow: "0 0 0 3px rgba(212, 165, 116, 0.15)",
                           },
                         },
                       }}
@@ -396,7 +396,7 @@ const Home: React.FC = () => {
                       fontWeight="700"
                       mb={1.5}
                       sx={{
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                         backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -413,22 +413,22 @@ const Home: React.FC = () => {
                       variant="outlined"
                       InputProps={{
                         startAdornment: (
-                          <Typography sx={{ mr: 1, color: "#667eea", fontWeight: "700" }}>
+                          <Typography sx={{ mr: 1, color: "#8b6f47", fontWeight: "700" }}>
                             $
                           </Typography>
                         ),
                       }}
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          background: "linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%)",
+                          background: "linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(139, 111, 71, 0.05) 100%)",
                           borderRadius: 2,
                           transition: "all 0.3s ease",
                           "&:hover": {
-                            background: "linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%)",
+                            background: "linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(139, 111, 71, 0.08) 100%)",
                           },
                           "&.Mui-focused": {
                             background: "white",
-                            boxShadow: "0 0 0 3px rgba(102, 126, 234, 0.1)",
+                            boxShadow: "0 0 0 3px rgba(212, 165, 116, 0.15)",
                           },
                         },
                       }}
@@ -464,13 +464,13 @@ const Home: React.FC = () => {
                       fontSize: "1.05rem",
                       fontWeight: "700",
                       textTransform: "none",
-                      background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                      background: "linear-gradient(135deg, #d4a574 0%, #8b6f47 100%)",
                       borderRadius: 2,
-                      boxShadow: "0 8px 20px rgba(102, 126, 234, 0.35)",
+                      boxShadow: "0 8px 20px rgba(139, 111, 71, 0.35)",
                       transition: "all 0.3s ease",
                       "&:hover": {
-                        background: "linear-gradient(135deg, #5568d3 0%, #653a8a 100%)",
-                        boxShadow: "0 12px 28px rgba(102, 126, 234, 0.45)",
+                        background: "linear-gradient(135deg, #c19560 0%, #6f5638 100%)",
+                        boxShadow: "0 12px 28px rgba(139, 111, 71, 0.45)",
                         transform: "translateY(-2px)",
                       },
                       "&:disabled": {
@@ -498,7 +498,7 @@ const Home: React.FC = () => {
                       fontWeight="800"
                       mb={3}
                       sx={{
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                         backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -513,7 +513,7 @@ const Home: React.FC = () => {
                         fontWeight="700"
                         mb={1.5}
                         sx={{
-                          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                          background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                           backgroundClip: "text",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
@@ -531,15 +531,15 @@ const Home: React.FC = () => {
                         variant="outlined"
                         sx={{
                           "& .MuiOutlinedInput-root": {
-                            background: "linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%)",
+                            background: "linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(139, 111, 71, 0.05) 100%)",
                             borderRadius: 2,
                             transition: "all 0.3s ease",
                             "&:hover": {
-                              background: "linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%)",
+                              background: "linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(139, 111, 71, 0.08) 100%)",
                             },
                             "&.Mui-focused": {
                               background: "white",
-                              boxShadow: "0 0 0 3px rgba(102, 126, 234, 0.1)",
+                              boxShadow: "0 0 0 3px rgba(212, 165, 116, 0.15)",
                             },
                           },
                         }}
@@ -552,14 +552,14 @@ const Home: React.FC = () => {
                         sx={{
                           p: 2,
                           borderRadius: 2,
-                          background: "linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%)",
-                          border: "1px solid rgba(102, 126, 234, 0.2)",
+                          background: "linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(139, 111, 71, 0.12) 100%)",
+                          border: "1px solid rgba(212, 165, 116, 0.3)",
                         }}
                       >
                         <Typography variant="body2" color="text.secondary" fontWeight="600">
                           Budget
                         </Typography>
-                        <Typography variant="h5" fontWeight="800" sx={{ color: "#667eea" }}>
+                        <Typography variant="h5" fontWeight="800" sx={{ color: "#8b6f47" }}>
                           ${budget}
                         </Typography>
                       </Paper>
@@ -577,13 +577,13 @@ const Home: React.FC = () => {
                         fontSize: "1.05rem",
                         fontWeight: "700",
                         textTransform: "none",
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #d4a574 0%, #8b6f47 100%)",
                         borderRadius: 2,
-                        boxShadow: "0 8px 20px rgba(102, 126, 234, 0.35)",
+                        boxShadow: "0 8px 20px rgba(139, 111, 71, 0.35)",
                         transition: "all 0.3s ease",
                         "&:hover": {
-                          background: "linear-gradient(135deg, #5568d3 0%, #653a8a 100%)",
-                          boxShadow: "0 12px 28px rgba(102, 126, 234, 0.45)",
+                          background: "linear-gradient(135deg, #c19560 0%, #6f5638 100%)",
+                          boxShadow: "0 12px 28px rgba(139, 111, 71, 0.45)",
                           transform: "translateY(-2px)",
                         },
                         "&:disabled": {
@@ -617,13 +617,13 @@ const Home: React.FC = () => {
                       sx={{
                         mt: 2,
                         py: 1.25,
-                        color: "#667eea",
+                        color: "#8b6f47",
                         textTransform: "none",
                         fontWeight: "600",
                         borderRadius: 2,
                         transition: "all 0.3s ease",
                         "&:hover": {
-                          background: "rgba(102, 126, 234, 0.08)",
+                          background: "rgba(212, 165, 116, 0.12)",
                         },
                       }}
                     >
@@ -667,12 +667,12 @@ const Home: React.FC = () => {
                   }}
                 >
                   <Box display="flex" alignItems="center" gap={1.5} mb={2}>
-                    <AutoAwesome sx={{ color: "#667eea", fontSize: 28 }} />
+                    <AutoAwesome sx={{ color: "#d4a574", fontSize: 28 }} />
                     <Typography
                       variant="h5"
                       fontWeight="800"
                       sx={{
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                         backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -724,7 +724,7 @@ const Home: React.FC = () => {
                       fontWeight="800"
                       gutterBottom
                       sx={{
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        background: "linear-gradient(135deg, #8b6f47 0%, #d4a574 100%)",
                         backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
@@ -749,12 +749,12 @@ const Home: React.FC = () => {
                             overflow: "hidden",
                             cursor: "pointer",
                             transition: "all 0.3s ease",
-                            border: "1px solid rgba(102, 126, 234, 0.15)",
+                            border: "1px solid rgba(212, 165, 116, 0.2)",
                             boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
                             "&:hover": {
                               transform: "translateY(-6px) scale(1.03)",
-                              boxShadow: "0 12px 28px rgba(102, 126, 234, 0.25)",
-                              border: "1px solid rgba(102, 126, 234, 0.3)",
+                              boxShadow: "0 12px 28px rgba(139, 111, 71, 0.25)",
+                              border: "1px solid rgba(212, 165, 116, 0.4)",
                             },
                           }}
                         >
