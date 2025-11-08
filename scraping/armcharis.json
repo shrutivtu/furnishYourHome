@@ -1,0 +1,282 @@
+[
+  {
+    "product_id": "AP-CHR-STRAND-20343224",
+    "product_name": "STRANDMON Wing chair, Nordvalla dark grey",
+    "description": "A classic wing chair design, providing comfortable support for the back and neck. A timeless piece perfect for reading or relaxing.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/strandmon-wing-chair-nordvalla-dark-grey-20343224/",
+      "external_sku": "203.432.24"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs & Wing Chairs",
+      "style": ["Classic", "Traditional"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom Nook", "Home Library"],
+      "ambiance": ["Cozy", "Formal"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Wing Chair", "High Back", "Comfort Classic"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 279.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-EKENÄSET-60506898",
+    "product_name": "EKENÄSET Armchair, oak/Gunnared beige",
+    "description": "Inspired by 1950s Scandinavian design. A sturdy, distinct armchair with clean lines and a visible wooden frame.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "http://ikea.com/de/en/p/ekenaeset-armchair-oak-gunnared-beige-60506898/",
+      "external_sku": "605.068.98"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Mid-Century Modern", "Scandinavian"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Office"],
+      "ambiance": ["Retro", "Stylish"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Mid-Century", "Wooden Frame", "Accent Chair"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 279.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-BROBOCK-90535804",
+    "product_name": "BROBOCK Armchair, rattan",
+    "description": "A lightweight armchair with a handmade, woven design. Creates a natural, warm feel in any room.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/brobock-armchair-rattan-90535804/",
+      "external_sku": "905.358.04"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Bohemian", "Natural"]
+    },
+    "physical_attributes": {
+      "color": "Natural Wood/Brown"
+    },
+    "suitability_meta": {
+      "room_type": ["Sunroom", "Living Room", "Covered Balcony"],
+      "ambiance": ["Relaxed", "Natural"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Rattan", "Woven", "Lightweight"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-ISLEV-JYSK",
+    "product_name": "Dining chair ISLEV w/ armrest natural/oak",
+    "description": "Comfortable dining chair with armrests and a woven seat. Combines functional design with a natural, light appearance.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/dining-room/dining-chairs/dining-chair-islev-w/armrest-natural-oak/natural",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Dining Chairs with Arms",
+      "style": ["Scandinavian", "Functional"]
+    },
+    "physical_attributes": {
+      "color": "Natural/Oak"
+    },
+    "suitability_meta": {
+      "room_type": ["Dining Room", "Kitchen"],
+      "ambiance": ["Practical", "Minimalist"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Dining Chair", "Wooden", "Armrest"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 79.99
+    }
+  },
+  {
+    "product_id": "AP-CHR-VILDSUND-JYSK",
+    "product_name": "Armchair VILDSUND white teddy",
+    "description": "A cozy, rounded armchair with a soft 'teddy' fabric cover, offering modern comfort and a welcoming look.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/living-room/armchairs/armchair-vildsund-white-teddy",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Modern", "Cozy/Hygge"]
+    },
+    "physical_attributes": {
+      "color": "White"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom"],
+      "ambiance": ["Cozy", "Soft Texture"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Teddy Fabric", "Accent Chair", "Modern Shape"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 169.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-SIMESTED-JYSK",
+    "product_name": "Armchair SIMESTED striped black/beige fabric",
+    "description": "A contemporary armchair featuring a distinctive black and beige striped pattern and metal legs. Offers a striking visual accent.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/living-room/armchairs/armchair-simested-striped-black/beige-fabric",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Contemporary", "Bold Pattern"]
+    },
+    "physical_attributes": {
+      "color": "Striped Black/Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Office"],
+      "ambiance": ["Modern", "Patterned Accent"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Striped Pattern", "Metal Legs", "Accent Chair"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-VADEHAVET-JYSK",
+    "product_name": "Armchair VADEHAVET natural fabric/oak",
+    "description": "Classic and simple armchair with a natural fabric seat and solid oak legs. Offers a light, Scandinavian feel.",
+    "website_details": {
+      "website_name": "JYSK (UK)",
+      "product_url": "https://jysk.co.uk/living-room/armchairs/armchair-vadehavet-natural-fabric/oak",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Scandinavian", "Natural"]
+    },
+    "physical_attributes": {
+      "color": "Natural Fabric/Oak"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Reading Nook"],
+      "ambiance": ["Hygge", "Light"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Wooden Legs", "Natural Fabric", "Scandinavian"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-COSY-BOLIA",
+    "product_name": "Cosy Chair",
+    "description": "Designed for maximum comfort, this chair features soft, enveloping cushions, living up to its name with a relaxed, modern aesthetic.",
+    "website_details": {
+      "website_name": "Bolia",
+      "product_url": "https://www.bolia.com/en-gb/products/02-330-01_00373/",
+      "external_sku": "02-330-01"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Lounge Chairs",
+      "style": ["Modern", "Lounge"]
+    },
+    "physical_attributes": {
+      "color": "Varies (Example: Light Grey/Off-White)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Lounge Area"],
+      "ambiance": ["Cozy", "Luxury"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Lounge Chair", "Deep Seating", "Comfort"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 1827.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-PEPPY-BOLIA",
+    "product_name": "Peppy Armchair",
+    "description": "A high-quality accent chair with a sculptural, expressive shape, designed to be a statement piece in any contemporary space.",
+    "website_details": {
+      "website_name": "Bolia",
+      "product_url": "https://www.bolia.com/en-gb/products/02-091-02_00096/",
+      "external_sku": "02-091-02"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Statement", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Varies (Example: Dark Green)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Entrance Hall"],
+      "ambiance": ["Modern", "Art Deco"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Sculptural", "Statement Piece", "Designer"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 1505.00
+    }
+  },
+  {
+    "product_id": "AP-CHR-PUFFIN-BOLIA",
+    "product_name": "Puffin Armchair",
+    "description": "An inviting, plump armchair with soft, rounded edges, offering a high degree of seating comfort with a playful, modern silhouette.",
+    "website_details": {
+      "website_name": "Bolia",
+      "product_url": "https://www.bolia.com/en-gb/products/02-083-01_00031/",
+      "external_sku": "02-083-01"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Armchairs",
+      "style": ["Playful", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Varies (Example: Cream/White)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Lounge Area"],
+      "ambiance": ["Inviting", "Soft"],
+      "max_people_sofa": 1,
+      "feature_tags": ["Rounded Design", "Plump Cushion", "High Comfort"]
+    },
+    "pricing": {
+      "currency": "GBP",
+      "price": 1284.00
+    }
+  }
+]
