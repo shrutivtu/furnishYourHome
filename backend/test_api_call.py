@@ -6,7 +6,6 @@ from pathlib import Path
 # Base URL of your FastAPI server
 BASE_URL = "http://localhost:8000"  # Adjust port if needed
 
-
 test_image_path = "livingRoom.jpg"
 
 # 2. Prepare the request

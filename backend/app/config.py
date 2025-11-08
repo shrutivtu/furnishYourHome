@@ -7,3 +7,5 @@ load_dotenv(dotenv_path=env_path)
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
+runware_api_key = os.getenv("RUNWARE_API_KEY")
+google_api_key = os.getenv("GOOGLE_API_KEY")
