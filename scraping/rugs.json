@@ -1,0 +1,114 @@
+[
+  {
+    "product_id": "AP-RUG-BELIANI-CIDE-BW",
+    "product_name": "Shaggy Area Rug 160 x 230 cm black and white CIDE",
+    "description": "A deep-pile, soft shaggy rug in a modern black and white color scheme. Perfect for adding warmth and texture to a living room or bedroom.",
+    "website_details": {
+      "website_name": "Beliani",
+      "product_url": "https://www.beliani.de/shaggy-area-rug-160-x-230-cm-black-and-white-cide.html",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Floor Coverings",
+      "sub": "Area Rugs",
+      "style": ["Shaggy", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Black and White"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom"],
+      "ambiance": ["Cozy", "Textural"],
+      "max_people_sofa": 0,
+      "feature_tags": ["High Pile", "Soft", "Rectangular", "160x230cm"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 109.99
+    }
+  },
+  {
+    "product_id": "AP-RUG-BELIANI-CIDE-BLUE",
+    "product_name": "Shaggy Area Rug 200 x 300 cm blue CIDE",
+    "description": "A large, thick shaggy rug in a vibrant blue color. Designed to be a striking, soft centerpiece in a spacious room.",
+    "website_details": {
+      "website_name": "Beliani",
+      "product_url": "https://www.beliani.de/shaggy-area-rug-200-x-300-cm-blue-cide.html",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Floor Coverings",
+      "sub": "Area Rugs",
+      "style": ["Shaggy", "Bold Accent"]
+    },
+    "physical_attributes": {
+      "color": "Blue"
+    },
+    "suitability_meta": {
+      "room_type": ["Large Living Room", "Dining Room"],
+      "ambiance": ["Bold", "Comfort"],
+      "max_people_sofa": 0,
+      "feature_tags": ["High Pile", "Large Size", "Rectangular", "200x300cm"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 209.99
+    }
+  },
+  {
+    "product_id": "AP-RUG-IKEA-10525026",
+    "product_name": "ONSEVIG Rug, low pile, multicolour",
+    "description": "A low-pile rug with a colourful, abstract pattern. Easy to vacuum and suitable for high-traffic areas.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/onsevig-rug-low-pile-multicolour-10525026/",
+      "external_sku": "105.250.26"
+    },
+    "category": {
+      "main": "Floor Coverings",
+      "sub": "Area Rugs",
+      "style": ["Abstract", "Modern"]
+    },
+    "physical_attributes": {
+      "color": "Multicolour"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Hallway", "Kids Room"],
+      "ambiance": ["Vibrant", "Easy Care"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Low Pile", "Patterned", "Durable"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 49.99
+    }
+  },
+  {
+    "product_id": "AP-RUG-IKEA-80528903",
+    "product_name": "VEDBÄK Rug, low pile, light grey",
+    "description": "A light grey, low-pile rug offering a neutral, minimalist foundation for any room. Easy to place and simple to clean.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/vedbaek-rug-low-pile-light-grey-80528903/",
+      "external_sku": "805.289.03"
+    },
+    "category": {
+      "main": "Floor Coverings",
+      "sub": "Area Rugs",
+      "style": ["Minimalist", "Neutral"]
+    },
+    "physical_attributes": {
+      "color": "Light Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Bedroom", "Office"],
+      "ambiance": ["Neutral", "Calm"],
+      "max_people_sofa": 0,
+      "feature_tags": ["Low Pile", "Solid Color", "Neutral Tone"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 29.99
+    }
+  }
+]
