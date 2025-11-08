@@ -39,6 +39,7 @@ const Home: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [prompt, setPrompt] = useState('');
+  const [budget, setBudget] = useState(''); // ✅ Added budget field
   const [redesignData, setRedesignData] = useState<RedesignResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -70,12 +71,19 @@ const Home: React.FC = () => {
       return;
     }
 
+    if (!budget.trim()) {
+      setError('Please enter your maximum budget');
+      return;
+    }
+
     setLoading(true);
     setError('');
 
     try {
       // MOCK DATA - Remove this when you have real backend
       await new Promise(resolve => setTimeout(resolve, 2000));
+
+      console.log('User Budget:', budget); // ✅ For testing
 
       const mockData: RedesignResponse = {
         redesignedImageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200',
@@ -129,11 +137,12 @@ const Home: React.FC = () => {
       setRedesignData(mockData);
       // END MOCK DATA
 
-      // Real API call
+      // Real API call example:
       /*
       const formData = new FormData();
       formData.append('image', image);
       formData.append('prompt', prompt);
+      formData.append('budget', budget);
 
       const response = await fetch('/api/redesign', {
         method: 'POST',
@@ -166,33 +175,15 @@ const Home: React.FC = () => {
     setError('');
 
     try {
-      // MOCK - In real app, send refinement request to backend
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      // Simulate updated design
       const updatedData: RedesignResponse = {
         ...redesignData!,
-        redesignedImageUrl: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200', // Different room
+        redesignedImageUrl: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200',
       };
 
       setRedesignData(updatedData);
       setRefinementPrompt('');
-
-      /*
-      // Real API call
-      const formData = new FormData();
-      formData.append('originalImage', image);
-      formData.append('refinementPrompt', refinementPrompt);
-      formData.append('previousDesign', redesignData.redesignedImageUrl);
-
-      const response = await fetch('/api/refine-redesign', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await response.json();
-      setRedesignData(data);
-      */
 
     } catch (err) {
       setError('Failed to refine design. Please try again.');
@@ -205,6 +196,7 @@ const Home: React.FC = () => {
     setImage(null);
     setPreview(null);
     setPrompt('');
+    setBudget(''); // ✅ reset budget
     setRedesignData(null);
     setError('');
     setRefinementPrompt('');
@@ -250,7 +242,7 @@ const Home: React.FC = () => {
                       '&:hover': { borderStyle: 'dashed' }
                     }}
                   >
-                    {preview ? 'Change Image' : 'Select Room Image'}
+                    {preview ? 'Change Image' : 'Upload Room Image'}
                     <input
                       type="file"
                       accept="image/*"
@@ -296,6 +288,27 @@ const Home: React.FC = () => {
                   />
                 </Box>
 
+                {/* ✅ Budget Input */}
+                <Box mb={3}>
+                  <Typography variant="h6" mb={2} fontWeight="600">
+                    Your Maximum Budget (USD)
+                  </Typography>
+                  <TextField
+                    fullWidth
+                    type="number"
+                    placeholder="E.g., 1500"
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    variant="outlined"
+                    InputProps={{ inputProps: { min: 0 } }}
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        bgcolor: '#fafafa'
+                      }
+                    }}
+                  />
+                </Box>
+
                 {/* Error Message */}
                 {error && (
                   <Alert severity="error" sx={{ mb: 2 }}>
@@ -309,7 +322,7 @@ const Home: React.FC = () => {
                   size="large"
                   fullWidth
                   onClick={handleSubmit}
-                  disabled={loading || !image || !prompt.trim()}
+                  disabled={loading || !image || !prompt.trim() || !budget.trim()} // ✅ include budget validation
                   startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <AutoAwesome />}
                   sx={{ py: 1.5, fontSize: '1.1rem' }}
                 >
@@ -324,7 +337,7 @@ const Home: React.FC = () => {
         {redesignData && (
           <Fade in={!!redesignData}>
             <Box>
-              {/* Redesigned Room Image - Full Width */}
+              {/* Redesigned Room Image */}
               <Card sx={{ boxShadow: 4, borderRadius: 3, mb: 4, overflow: 'hidden' }}>
                 <Box sx={{ position: 'relative' }}>
                   <img
@@ -362,7 +375,6 @@ const Home: React.FC = () => {
               </Card>
 
               {/* Furniture Items Grid */}
-              {/* Furniture Items Grid */}
               <Box mb={4}>
                 <Typography variant="h5" fontWeight="600" mb={3} sx={{ color: '#1a237e' }}>
                   Featured Furniture & Decor
@@ -371,9 +383,9 @@ const Home: React.FC = () => {
                   sx={{
                     display: 'grid',
                     gridTemplateColumns: {
-                      xs: 'repeat(2, 1fr)',  // 2 columns on mobile
-                      sm: 'repeat(3, 1fr)',  // 3 columns on tablet
-                      md: 'repeat(6, 1fr)'   // 6 columns on desktop
+                      xs: 'repeat(2, 1fr)',
+                      sm: 'repeat(3, 1fr)',
+                      md: 'repeat(6, 1fr)'
                     },
                     gap: 3
                   }}
@@ -528,8 +540,8 @@ const Home: React.FC = () => {
             <Box mt={6} textAlign="center">
               <Paper sx={{ maxWidth: 500, mx: 'auto', p: 3, bgcolor: '#e3f2fd' }}>
                 <Typography variant="body2" color="text.secondary">
-                  <strong>How it works:</strong> Upload a photo of your room and describe your vision.
-                  Our AI will redesign it using items from our inventory.
+                  <strong>How it works:</strong> Upload a photo of your room, describe your vision,
+                  and specify your budget. Our AI will redesign it using items from our inventory.
                 </Typography>
               </Paper>
             </Box>
