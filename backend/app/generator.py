@@ -7,7 +7,8 @@ from typing import List, Union
 
 from backend.app import config
 
-class NanoBananaGenerator:
+
+class ImageGeneratorG:
     def __init__(self, api_key: str = None):
         """
         Initialize the Nano Banana image generator.
@@ -18,6 +19,16 @@ class NanoBananaGenerator:
 
         self.client = genai.Client(api_key=config.google_api_key)
         self.model = "gemini-2.5-flash-image-preview"
+
+    @staticmethod
+    def generate_system_prompt(user_prompt: str, user_price: float):
+        # 0: actual_prompt_from_openai
+        # 1: running_images (filePath)
+        # 2: running_items (json)
+        # 3: total price
+        return [user_prompt, [], ["hi", "from", "openai"], 700]
+        #return ["", [""], [], 5]
+
 
     def generate_image(
             self,
@@ -81,13 +92,6 @@ class NanoBananaGenerator:
         return generated_image
 
 
-
-generator = NanoBananaGenerator()
-
-prompt1 = "Take the chair, and put 6 ot it in a dining layout in the room file I gave. I also added a nice lamp. put it also in the room. take also the sofa. make it front looking"
-image1 = generator.generate_image(
-    prompt=prompt1,
-    input_images= ["../chair.png", "../lamp.jpg" , "../sofa.png", "../livingRoom.jpg"],
-    output_path="output_living_room.png"
-)
-print("Example 1 completed\n")
+class ImageGenerator:
+    def __init__(self, api_key: str = None):
+        pass
