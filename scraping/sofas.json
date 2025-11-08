@@ -1,0 +1,313 @@
+[
+  {
+    "product_id": "AP-SB-HYLTARP-29489603",
+    "product_name": "HYLTARP 2-seat sofa-bed, Gransel natural",
+    "description": "A comfortable 2-seat sofa that easily converts into a double bed (140x200 cm). Features a durable, washable cover and pocket springs for soft comfort and support. Designed to withstand heavy everyday use.",
+    "website_details": {
+      "website_name": "IKEA (Germany/Europe)",
+      "product_url": "https://www.ikea.com/de/en/p/hyltarp-2-seat-sofa-bed-gransel-natural-s29489603/",
+      "external_sku": "294.896.03"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofa Beds",
+      "style": ["Scandinavian", "Functional", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Natural (Beige/Light Brown)"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Guest Room", "Studio Apartment"],
+      "ambiance": ["Cozy", "Practical", "Light/Airy"],
+      "max_people_sofa": 2,
+      "max_people_bed": 2,
+      "feature_tags": ["Sofa-Bed", "Removable/Washable Cover", "Durable"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 838.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-SOEDER-09305426",
+    "product_name": "SOEDERHAMN 4-seat sofa with chaise longue and open end, Gunnared beige",
+    "description": "Deep seats and loose back cushions provide extra comfort. The sofa is highly flexible and can be reconfigured. Lightweight design.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/soederhamn-4-seat-sofa-with-chaise-longue-and-open-end-gunnared-beige-s09305426/",
+      "external_sku": "093.054.26"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sectionals & Modular Sofas",
+      "style": ["Modern", "Modular"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Large Living Room", "Lounge Area"],
+      "ambiance": ["Lounge", "Contemporary"],
+      "max_people_sofa": 4,
+      "feature_tags": ["Modular", "Chaise Longue", "Lightweight"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 949.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-KIVIK-39443054",
+    "product_name": "KIVIK 3-seat sofa with chaise longue, Kelinge grey-turquoise",
+    "description": "Deep seat cushions with a top layer of pocket springs and memory foam. Provides fantastic sitting comfort and support.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/kivik-3-seat-sofa-with-chaise-longue-kelinge-grey-turquoise-s39443054/",
+      "external_sku": "394.430.54"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sectionals & Sofas",
+      "style": ["Casual", "Comfort"]
+    },
+    "physical_attributes": {
+      "color": "Grey-Turquoise"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Family Room"],
+      "ambiance": ["Relaxed", "Vibrant Accent"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Memory Foam", "Deep Seating", "Chaise Longue"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 1099.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-EKTORP-39508998",
+    "product_name": "EKTORP 3-seat sofa, Hakebo dark grey",
+    "description": "A timeless design with comfortably deep seat cushions and a large surface area. The cover is machine washable and easy to change.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/ektorp-3-seat-sofa-hakebo-dark-grey-s39508998/",
+      "external_sku": "395.089.98"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofas",
+      "style": ["Traditional", "Classic"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Cottage"],
+      "ambiance": ["Comfortable", "Homey"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Timeless Design", "Washable Cover", "Comfort Classic"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 499.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-KLIPPAN-79010614",
+    "product_name": "KLIPPAN 2-seat sofa, Vissle grey",
+    "description": "A classic design that is small and easy to furnish with, even when space is limited. The cover is easy to keep clean as it is removable.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/klippan-2-seat-sofa-vissle-grey-s79010614/",
+      "external_sku": "790.106.14"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Compact Sofas",
+      "style": ["Minimalist", "Small Space"]
+    },
+    "physical_attributes": {
+      "color": "Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Small Living Room", "Dorm Room", "Office"],
+      "ambiance": ["Practical", "Compact"],
+      "max_people_sofa": 2,
+      "feature_tags": ["Small Space", "Removable Cover", "Iconic Design"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 299.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-GLOSTAD-50489012",
+    "product_name": "GLOSTAD 2-seat sofa, Knisa dark grey",
+    "description": "A small, affordable sofa with a clean, light look. Ideal for small spaces or as a supplement to existing seating.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/glostad-2-seat-sofa-knisa-dark-grey-50489012/",
+      "external_sku": "504.890.12"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Budget Sofas",
+      "style": ["Minimalist", "Scandinavian"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Small Living Room", "First Apartment"],
+      "ambiance": ["Simple", "Affordable"],
+      "max_people_sofa": 2,
+      "feature_tags": ["Budget Friendly", "Small Space", "Easy Assembly"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 149.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-STOCK-90586092",
+    "product_name": "STOCKHOLM 2025 3-seat sofa, Sundhamn beige",
+    "description": "Elegant and comfortable sofa with soft, deep seating. Part of the limited-edition STOCKHOLM 2025 collection, known for high quality and craftmanship.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/stockholm-2025-3-seat-sofa-sundhamn-beige-90586092/",
+      "external_sku": "905.860.92"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Premium Sofas",
+      "style": ["Elegant", "High-End Scandinavian"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Formal Living Room", "Executive Lounge"],
+      "ambiance": ["Elegant", "Comfort Classic"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Premium Quality", "Deep Seating", "Limited Edition"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 1699.00
+    }
+  },
+  {
+    "product_id": "AP-SOF-SOEDER-39305415",
+    "product_name": "SOEDERHAMN 3-seat section, Gunnared beige",
+    "description": "A single modular section from the SOEDERHAMN series. Can be used alone or combined with other pieces for a custom sofa solution.",
+    "website_details": {
+      "website_name": "IKEA",
+      "product_url": "https://www.ikea.com/de/en/p/soederhamn-3-seat-section-gunnared-beige-s39305415/",
+      "external_sku": "393.054.15"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Modular Sections",
+      "style": ["Modern", "Flexible"]
+    },
+    "physical_attributes": {
+      "color": "Beige"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Lounge Area"],
+      "ambiance": ["Lounge", "Contemporary"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Modular", "Customizable", "Lightweight"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 649.00
+    }
+  },
+  {
+    "product_id": "AP-SB-VEJLBY-JYSK",
+    "product_name": "Sofa-bed with chaise longue VEJLBY fabric dark grey",
+    "description": "A practical sofa bed with a chaise longue that includes hidden storage. Easily converts into a comfortable double bed.",
+    "website_details": {
+      "website_name": "JYSK (Germany)",
+      "product_url": "https://jysk.de/wohnzimmer/schlafsofas/schlafsofa-chaiselongue-vejlby-stoff-dunkelgrau",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofa Beds with Chaise",
+      "style": ["Functional", "Contemporary"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Guest Room"],
+      "ambiance": ["Practical", "Space Saving"],
+      "max_people_sofa": 3,
+      "feature_tags": ["Sofa-Bed", "Storage", "Chaise Longue"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 549.00
+    }
+  },
+  {
+    "product_id": "AP-SB-SKILLEBEKK-ARM",
+    "product_name": "Sleeper armchair SKILLEBEKK fabric dark grey",
+    "description": "A compact armchair that can be quickly folded out into a comfortable single bed. Ideal for small spaces or occasional guests.",
+    "website_details": {
+      "website_name": "JYSK (Germany)",
+      "product_url": "https://jysk.de/wohnzimmer/schlafsofas/schlafsessel-skillebekk-stoff-dunkelgrau",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sleeper Armchairs",
+      "style": ["Compact", "Functional"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Small Bedroom", "Home Office", "Small Living Room"],
+      "ambiance": ["Space Saving", "Practical"],
+      "max_people_sofa": 1,
+      "max_people_bed": 1,
+      "feature_tags": ["Sleeper Chair", "Compact", "Single Bed"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 199.00
+    }
+  },
+  {
+    "product_id": "AP-SB-SKILLEBEKK-SOFA",
+    "product_name": "Sofa-bed SKILLEBEKK dark grey fabric",
+    "description": "A versatile 3-seater sofa that converts into a standard double bed, featuring click-clack mechanism and a modern look.",
+    "website_details": {
+      "website_name": "JYSK (Germany)",
+      "product_url": "https://jysk.de/wohnzimmer/schlafsofas/schlafsofa-skillebekk-dunkelgrau-stoff",
+      "external_sku": "N/A"
+    },
+    "category": {
+      "main": "Seating",
+      "sub": "Sofa Beds",
+      "style": ["Modern", "Simple"]
+    },
+    "physical_attributes": {
+      "color": "Dark Grey"
+    },
+    "suitability_meta": {
+      "room_type": ["Living Room", "Guest Room"],
+      "ambiance": ["Practical", "Contemporary"],
+      "max_people_sofa": 3,
+      "max_people_bed": 2,
+      "feature_tags": ["Sofa-Bed", "Click-Clack", "3-Seater"]
+    },
+    "pricing": {
+      "currency": "EUR",
+      "price": 379.00
+    }
+  }
+]
