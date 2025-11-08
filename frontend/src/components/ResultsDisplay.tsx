@@ -19,9 +19,10 @@ import { Edit, Upload, AutoAwesome, Home as HomeIcon } from "@mui/icons-material
 interface ResultsDisplayProps {
     resultImage: string;
     furnitureImages: string[];
+    totalPrice: number | null;
   }
   
-  const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ resultImage, furnitureImages }) => (
+  const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ resultImage, furnitureImages, totalPrice }) => (
     <Fade in timeout={1200}>
       <Box
         sx={{
@@ -90,6 +91,16 @@ interface ResultsDisplayProps {
             />
           </Box>
         </Paper>
+
+        {/* Total Price */}
+      {totalPrice !== null && (
+        <Paper elevation={3} sx={{ p: 2, borderRadius: 2, mb: 4, textAlign: "center" }}>
+          <Typography variant="subtitle1" fontWeight={700}>Total Price</Typography>
+          <Typography variant="h5" fontWeight={800} color="primary">
+            ${totalPrice.toFixed(2)}
+          </Typography>
+        </Paper>
+      )}
   
         {/* Furniture Items */}
         {furnitureImages.length > 0 && (

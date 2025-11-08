@@ -20,6 +20,7 @@ const Home: React.FC = () => {
   const [furnitureImages, setFurnitureImages] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [editPrompt, setEditPrompt] = useState("");
+  const [totalPrice, setTotalPrice] = useState<number | null>(null);
 
   const BASE_URL = "http://localhost:8000";
   const RESULTS_PATH = "/results";
@@ -61,6 +62,8 @@ const Home: React.FC = () => {
         (furnitureId: string) => `https://placehold.co/300x300/764ba2/white?text=Furniture+${furnitureId}`
       );
       setFurnitureImages(furniturePaths);
+      // Mock total price
+      setTotalPrice(1250); // replace with actual API value when ready
 
       /* REAL API CODE - Uncomment when backend is ready
       const paramsData = {
@@ -111,6 +114,9 @@ const Home: React.FC = () => {
           (furnitureId: string) => `${RESULTS_PATH}/${jobIdStr}_furniture_${furnitureId}.png`
         );
         setFurnitureImages(furniturePaths);
+      }
+      if(resultData.total_price){
+        setTotalPrice(resultData.total_price);
       }
       */
     } catch (err) {
@@ -256,6 +262,7 @@ const Home: React.FC = () => {
             <ResultsDisplay
               resultImage={resultImage}
               furnitureImages={furnitureImages}
+              totalPrice={totalPrice}
             />
           )}
         </Box>
