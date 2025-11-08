@@ -70,7 +70,7 @@ def process_job(job_id: str, image_bytes: bytes, params_dict: Dict[str, Any]):
 
         running_prompt = system_prompt[0]
         running_images = system_prompt[1]
-        running_images.append(str("/Users/lharchi/Projects/furnishYourHome/input/" + str(job_id) + ".jpeg"))
+        running_images.append(str("/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/input/" + str(job_id) + ".jpeg"))
 
         print ("="*60)
         print ("I am going to process job with this prompt: " + running_prompt)
@@ -79,16 +79,16 @@ def process_job(job_id: str, image_bytes: bytes, params_dict: Dict[str, Any]):
         image = generator.generate_image(
             prompt=running_prompt,
             input_images=running_images,
-            output_path=("/Users/lharchi/Projects/furnishYourHome/results/" + str(job_id) + ".png")
+            output_path=("/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/results/" + str(job_id) + ".png")
         )
 
-        #results_items = system_prompt[2]
-        #total_price = system_prompt[3]
+        results_items = system_prompt[2]
+        total_price = system_prompt[3]
 
         # Update with results
         jobs_db[job_id]["status"] = "done"
-        #jobs_db[job_id]["items"] = results_items
-        #jobs_db[job_id]["total_price"] = total_price
+        jobs_db[job_id]["items"] = results_items
+        jobs_db[job_id]["total_price"] = total_price
 
         jobs_db[job_id]["completed_at"] = datetime.now().isoformat()
 
@@ -129,7 +129,7 @@ async def generate(
     job_id = str(uuid.uuid4())
 
     # Save uploaded image to folder
-    upload_folder = "/Users/lharchi/Projects/furnishYourHome/input"
+    upload_folder = "/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/input"
     image_path = upload_folder + "/" + f"{job_id}.jpeg"
 
     with open(image_path, "wb") as f:

@@ -22,7 +22,9 @@ interface ResultsDisplayProps {
     totalPrice: number | null;
   }
   
-  const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ resultImage, furnitureImages, totalPrice }) => (
+  const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ resultImage, furnitureImages, totalPrice }) => {
+    console.log(resultImage)
+    return(
     <Fade in timeout={1200}>
       <Box
         sx={{
@@ -170,6 +172,6 @@ interface ResultsDisplayProps {
         )}
       </Box>
     </Fade>
-  );
+  )};
 
   export default ResultsDisplay

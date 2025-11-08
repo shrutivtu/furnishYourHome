@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   const [totalPrice, setTotalPrice] = useState<number | null>(null);
 
   const BASE_URL = "http://localhost:8000";
-  const RESULTS_PATH = "/results";
+  const RESULTS_PATH = "/Users/shrutisaxena/Documents/jobprep/hackathon/furnishYourHome/results/";
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -42,130 +42,159 @@ const Home: React.FC = () => {
       setError("Please upload an image, enter your vision, and provide a budget.");
       return;
     }
-
+  
     setLoading(true);
     setError(null);
     setResultImage(null);
     setFurnitureImages([]);
-
+    setTotalPrice(null); // reset previous total price
+  
     try {
-      // MOCK MODE - Simulate API call with delay
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-
-      // Mock redesigned image
-      const redesignedImagePath = `https://placehold.co/800x600/667eea/white?text=Redesigned+Room`;
-      setResultImage(redesignedImagePath);
-
-      // Mock furniture images
-      const mockFurnitureIds = ["sofa", "table", "lamp", "chair"];
-      const furniturePaths = mockFurnitureIds.map(
-        (furnitureId: string) => `https://placehold.co/300x300/764ba2/white?text=Furniture+${furnitureId}`
-      );
-      setFurnitureImages(furniturePaths);
-      // Mock total price
-      setTotalPrice(1250); // replace with actual API value when ready
-
-      /* REAL API CODE - Uncomment when backend is ready
       const paramsData = {
         prompt,
         max_price: parseFloat(budget),
       };
-
+  
       const formData = new FormData();
       formData.append("params", JSON.stringify(paramsData));
       formData.append("image", image);
-
+  
+      // 1. Submit the job
       const jobResponse = await fetch(`${BASE_URL}/jobs/generate`, {
         method: "POST",
         body: formData,
       });
-
+  
       if (!jobResponse.ok) throw new Error("Failed to submit job");
+  
       const jobData = await jobResponse.json();
       const jobId = jobData.job_id;
-
+  
+      // 2. Poll for status
       let jobStatus = "pending";
-      for (let attempt = 0; attempt < 20; attempt++) {
+      for (let attempt = 0; attempt < 70; attempt++) {
         const statusResponse = await fetch(`${BASE_URL}/jobs/status/${jobId}`);
         if (!statusResponse.ok) throw new Error("Failed to check job status");
-
+  
         const statusData = await statusResponse.json();
         jobStatus = statusData.job_status;
-
+  
         if (jobStatus === "done") break;
         if (jobStatus === "failed") throw new Error("Job failed on server");
-
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+  
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // wait 2s
       }
-
+  
       if (jobStatus !== "done") throw new Error("Job did not complete in time");
-
+  
+      // 3. Fetch results
       const resultResponse = await fetch(`${BASE_URL}/jobs/results/${jobId}`);
       if (!resultResponse.ok) throw new Error("Failed to fetch results");
-
+  
       const resultData = await resultResponse.json();
-
       const jobIdStr = String(jobId);
+  
+      // Redesigned room image
+      console.log(jobIdStr);
       const redesignedImagePath = `${RESULTS_PATH}/${jobIdStr}.png`;
+      console.log(redesignedImagePath)
       setResultImage(redesignedImagePath);
-
+  
+      // Furniture images
       if (resultData.furniture_ids && Array.isArray(resultData.furniture_ids)) {
         const furniturePaths = resultData.furniture_ids.map(
-          (furnitureId: string) => `${RESULTS_PATH}/${jobIdStr}_furniture_${furnitureId}.png`
+          (furnitureId: string) => `${RESULTS_PATH}/${jobIdStr}_furniture_${furnitureId}.jpg`
         );
         setFurnitureImages(furniturePaths);
       }
-      if(resultData.total_price){
+  
+      // Total price
+      if (resultData.total_price) {
         setTotalPrice(resultData.total_price);
       }
-      */
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
       setLoading(false);
     }
   };
+  
 
   const handleEditSubmit = async () => {
     if (!editPrompt.trim()) {
       setError("Please enter modifications you'd like to make.");
       return;
     }
-
+  
     setLoading(true);
     setError(null);
-
+  
     try {
-      // MOCK MODE - Simulate edit API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // Update with new mock image
-      const updatedImagePath = `https://placehold.co/800x600/5568d3/white?text=Updated+Design`;
-      setResultImage(updatedImagePath);
-      setEditPrompt("");
-
-      /* REAL EDIT API CODE - Add when backend is ready
       const editData = {
         edit_prompt: editPrompt,
         max_price: parseFloat(budget),
       };
-
+  
+      // 1. Submit edit job
       const editResponse = await fetch(`${BASE_URL}/jobs/edit/${currentJobId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editData),
       });
-
-      if (!editResponse.ok) throw new Error("Failed to edit design");
+  
+      if (!editResponse.ok) throw new Error("Failed to submit edit job");
+  
       const editJobData = await editResponse.json();
-      // Poll for results similar to initial submit...
-      */
+      const editJobId = editJobData.job_id;
+  
+      // 2. Poll for status
+      let jobStatus = "pending";
+      for (let attempt = 0; attempt < 70; attempt++) {
+        const statusResponse = await fetch(`${BASE_URL}/jobs/status/${editJobId}`);
+        if (!statusResponse.ok) throw new Error("Failed to check edit job status");
+  
+        const statusData = await statusResponse.json();
+        jobStatus = statusData.job_status;
+  
+        if (jobStatus === "done") break;
+        if (jobStatus === "failed") throw new Error("Edit job failed on server");
+  
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // wait 2s
+      }
+  
+      if (jobStatus !== "done") throw new Error("Edit job did not complete in time");
+  
+      // 3. Fetch results
+      const resultResponse = await fetch(`${BASE_URL}/jobs/results/${editJobId}`);
+      if (!resultResponse.ok) throw new Error("Failed to fetch edit results");
+  
+      const resultData = await resultResponse.json();
+      const jobIdStr = String(editJobId);
+  
+      // Updated redesigned room image
+      const updatedImagePath = `${RESULTS_PATH}/${jobIdStr}.png`;
+      setResultImage(updatedImagePath);
+  
+      // Furniture images
+      if (resultData.furniture_ids && Array.isArray(resultData.furniture_ids)) {
+        const furniturePaths = resultData.furniture_ids.map(
+          (furnitureId: string) => `${RESULTS_PATH}/${jobIdStr}_furniture_${furnitureId}.png`
+        );
+        setFurnitureImages(furniturePaths);
+      }
+  
+      // Total price
+      if (resultData.total_price) {
+        setTotalPrice(resultData.total_price);
+      }
+  
+      setEditPrompt("");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
       setLoading(false);
     }
-  };
+  };  
 
   const handleStartNew = () => {
     setResultImage(null);
